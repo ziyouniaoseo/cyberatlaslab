@@ -1,0 +1,296 @@
+Get Post Type and Taxonomy Code
+All Custom Post Type UI Post Types
+All of the selectable code snippets below are useful if you wish to migrate away from Custom Post Type UI and retain your existing registered post types or taxonomies.
+
+Copy/paste the code below into your functions.php file.
+
+
+function cptui_register_my_cpts() {
+
+	/**
+	 * Post Type: 产品测评.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "产品测评", "cyberatlaslab-child" ),
+		"singular_name" => esc_html__( "产品", "cyberatlaslab-child" ),
+		"menu_name" => esc_html__( "产品测评", "cyberatlaslab-child" ),
+		"all_items" => esc_html__( "所有产品", "cyberatlaslab-child" ),
+		"add_new" => esc_html__( "添加产品", "cyberatlaslab-child" ),
+		"add_new_item" => esc_html__( "添加新产品", "cyberatlaslab-child" ),
+		"edit_item" => esc_html__( "编辑产品", "cyberatlaslab-child" ),
+		"new_item" => esc_html__( "新产品", "cyberatlaslab-child" ),
+		"view_item" => esc_html__( "查看产品", "cyberatlaslab-child" ),
+		"view_items" => esc_html__( "查看产品列表", "cyberatlaslab-child" ),
+		"search_items" => esc_html__( "搜索产品", "cyberatlaslab-child" ),
+		"not_found" => esc_html__( "未找到产品", "cyberatlaslab-child" ),
+		"not_found_in_trash" => esc_html__( "回收站中无产品", "cyberatlaslab-child" ),
+		"parent" => esc_html__( "父级产品:", "cyberatlaslab-child" ),
+		"featured_image" => esc_html__( "产品 Logo", "cyberatlaslab-child" ),
+		"set_featured_image" => esc_html__( "设置产品 Logo", "cyberatlaslab-child" ),
+		"remove_featured_image" => esc_html__( "移除产品 Logo", "cyberatlaslab-child" ),
+		"use_featured_image" => esc_html__( "使用此图作为产品 Logo", "cyberatlaslab-child" ),
+		"archives" => esc_html__( "产品归档", "cyberatlaslab-child" ),
+		"insert_into_item" => esc_html__( "插入到产品", "cyberatlaslab-child" ),
+		"uploaded_to_this_item" => esc_html__( "上传到此产品", "cyberatlaslab-child" ),
+		"filter_items_list" => esc_html__( "筛选产品列表", "cyberatlaslab-child" ),
+		"filter_by_date" => esc_html__( "按日期筛选产品", "cyberatlaslab-child" ),
+		"items_list_navigation" => esc_html__( "产品列表导航", "cyberatlaslab-child" ),
+		"items_list" => esc_html__( "产品列表", "cyberatlaslab-child" ),
+		"attributes" => esc_html__( "产品属性", "cyberatlaslab-child" ),
+		"name_admin_bar" => esc_html__( "顶部栏“新建”菜单", "cyberatlaslab-child" ),
+		"item_published" => esc_html__( "文章已发布", "cyberatlaslab-child" ),
+		"item_published_privately" => esc_html__( "该条目已设为私有", "cyberatlaslab-child" ),
+		"item_reverted_to_draft" => esc_html__( "项目已恢复为草稿", "cyberatlaslab-child" ),
+		"item_trashed" => esc_html__( "项目已移至回收站", "cyberatlaslab-child" ),
+		"item_scheduled" => esc_html__( "待办事项", "cyberatlaslab-child" ),
+		"item_updated" => esc_html__( "项目已更新", "cyberatlaslab-child" ),
+		"template_name" => esc_html__( "模板名称", "cyberatlaslab-child" ),
+		"parent_item_colon" => esc_html__( "父级产品:", "cyberatlaslab-child" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "产品测评", "cyberatlaslab-child" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => "reviews",
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => false,
+		"rewrite" => [ "slug" => "review", "with_front" => false ],
+		"query_var" => true,
+		"menu_position" => 5,
+		"menu_icon" => "dashicons-shield",
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "revisions", "author" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "product", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts' );
+
+
+产品测评 Post Type
+Copy/paste the code below into your functions.php file.
+
+function cptui_register_my_cpts_product() {
+
+	/**
+	 * Post Type: 产品测评.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "产品测评", "cyberatlaslab-child" ),
+		"singular_name" => esc_html__( "产品", "cyberatlaslab-child" ),
+		"menu_name" => esc_html__( "产品测评", "cyberatlaslab-child" ),
+		"all_items" => esc_html__( "所有产品", "cyberatlaslab-child" ),
+		"add_new" => esc_html__( "添加产品", "cyberatlaslab-child" ),
+		"add_new_item" => esc_html__( "添加新产品", "cyberatlaslab-child" ),
+		"edit_item" => esc_html__( "编辑产品", "cyberatlaslab-child" ),
+		"new_item" => esc_html__( "新产品", "cyberatlaslab-child" ),
+		"view_item" => esc_html__( "查看产品", "cyberatlaslab-child" ),
+		"view_items" => esc_html__( "查看产品列表", "cyberatlaslab-child" ),
+		"search_items" => esc_html__( "搜索产品", "cyberatlaslab-child" ),
+		"not_found" => esc_html__( "未找到产品", "cyberatlaslab-child" ),
+		"not_found_in_trash" => esc_html__( "回收站中无产品", "cyberatlaslab-child" ),
+		"parent" => esc_html__( "父级产品:", "cyberatlaslab-child" ),
+		"featured_image" => esc_html__( "产品 Logo", "cyberatlaslab-child" ),
+		"set_featured_image" => esc_html__( "设置产品 Logo", "cyberatlaslab-child" ),
+		"remove_featured_image" => esc_html__( "移除产品 Logo", "cyberatlaslab-child" ),
+		"use_featured_image" => esc_html__( "使用此图作为产品 Logo", "cyberatlaslab-child" ),
+		"archives" => esc_html__( "产品归档", "cyberatlaslab-child" ),
+		"insert_into_item" => esc_html__( "插入到产品", "cyberatlaslab-child" ),
+		"uploaded_to_this_item" => esc_html__( "上传到此产品", "cyberatlaslab-child" ),
+		"filter_items_list" => esc_html__( "筛选产品列表", "cyberatlaslab-child" ),
+		"filter_by_date" => esc_html__( "按日期筛选产品", "cyberatlaslab-child" ),
+		"items_list_navigation" => esc_html__( "产品列表导航", "cyberatlaslab-child" ),
+		"items_list" => esc_html__( "产品列表", "cyberatlaslab-child" ),
+		"attributes" => esc_html__( "产品属性", "cyberatlaslab-child" ),
+		"name_admin_bar" => esc_html__( "顶部栏“新建”菜单", "cyberatlaslab-child" ),
+		"item_published" => esc_html__( "文章已发布", "cyberatlaslab-child" ),
+		"item_published_privately" => esc_html__( "该条目已设为私有", "cyberatlaslab-child" ),
+		"item_reverted_to_draft" => esc_html__( "项目已恢复为草稿", "cyberatlaslab-child" ),
+		"item_trashed" => esc_html__( "项目已移至回收站", "cyberatlaslab-child" ),
+		"item_scheduled" => esc_html__( "待办事项", "cyberatlaslab-child" ),
+		"item_updated" => esc_html__( "项目已更新", "cyberatlaslab-child" ),
+		"template_name" => esc_html__( "模板名称", "cyberatlaslab-child" ),
+		"parent_item_colon" => esc_html__( "父级产品:", "cyberatlaslab-child" ),
+	];
+
+	$args = [
+		"label" => esc_html__( "产品测评", "cyberatlaslab-child" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"rest_namespace" => "wp/v2",
+		"has_archive" => "reviews",
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"can_export" => false,
+		"rewrite" => [ "slug" => "review", "with_front" => false ],
+		"query_var" => true,
+		"menu_position" => 5,
+		"menu_icon" => "dashicons-shield",
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "revisions", "author" ],
+		"show_in_graphql" => false,
+	];
+
+	register_post_type( "product", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts_product' );
+
+All Custom Post Type UI Taxonomies
+Copy/paste the code below into your functions.php file.
+
+function cptui_register_my_taxes() {
+
+	/**
+	 * Taxonomy: 产品分类.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "产品分类", "cyberatlaslab-child" ),
+		"singular_name" => esc_html__( "产品分类", "cyberatlaslab-child" ),
+		"menu_name" => esc_html__( "产品分类", "cyberatlaslab-child" ),
+		"all_items" => esc_html__( "所有分类", "cyberatlaslab-child" ),
+		"edit_item" => esc_html__( "编辑分类", "cyberatlaslab-child" ),
+		"view_item" => esc_html__( "查看分类", "cyberatlaslab-child" ),
+		"update_item" => esc_html__( "更新分类", "cyberatlaslab-child" ),
+		"add_new_item" => esc_html__( "添加新分类", "cyberatlaslab-child" ),
+		"new_item_name" => esc_html__( "新分类名称", "cyberatlaslab-child" ),
+		"parent_item" => esc_html__( "父级分类", "cyberatlaslab-child" ),
+		"parent_item_colon" => esc_html__( "父级分类:", "cyberatlaslab-child" ),
+		"search_items" => esc_html__( "搜索分类", "cyberatlaslab-child" ),
+		"popular_items" => esc_html__( "热门分类", "cyberatlaslab-child" ),
+		"separate_items_with_commas" => esc_html__( "用逗号分隔分类", "cyberatlaslab-child" ),
+		"add_or_remove_items" => esc_html__( "添加或移除分类", "cyberatlaslab-child" ),
+		"choose_from_most_used" => esc_html__( "从常用分类中选择", "cyberatlaslab-child" ),
+		"not_found" => esc_html__( "未找到分类", "cyberatlaslab-child" ),
+		"no_terms" => esc_html__( "暂无分类", "cyberatlaslab-child" ),
+		"filter_by_item" => esc_html__( "按类别筛选", "cyberatlaslab-child" ),
+		"items_list_navigation" => esc_html__( "产品列表导航", "cyberatlaslab-child" ),
+		"items_list" => esc_html__( "产品列表", "cyberatlaslab-child" ),
+		"back_to_items" => esc_html__( "返回商品列表", "cyberatlaslab-child" ),
+		"name_field_description" => esc_html__( "分类名称下方文案", "cyberatlaslab-child" ),
+		"parent_field_description" => esc_html__( "父级下拉菜单下方文字", "cyberatlaslab-child" ),
+		"slug_field_description" => esc_html__( "分类别名字段描述", "cyberatlaslab-child" ),
+		"desc_field_description" => esc_html__( "分类字段描述", "cyberatlaslab-child" ),
+		"template_name" => esc_html__( "模板名称", "cyberatlaslab-child" ),
+	];
+
+	
+	$args = [
+		"label" => esc_html__( "产品分类", "cyberatlaslab-child" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'product-cat', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"show_tagcloud" => false,
+		"rest_base" => "product-cat",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"rest_namespace" => "wp/v2",
+		"show_in_quick_edit" => false,
+		"sort" => false,
+		"show_in_graphql" => false,
+	];
+	register_taxonomy( "product-cat", [ "product" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes' );
+
+
+产品分类 Taxonomy
+Copy/paste the code below into your functions.php file.
+
+
+function cptui_register_my_taxes_product_cat() {
+
+	/**
+	 * Taxonomy: 产品分类.
+	 */
+
+	$labels = [
+		"name" => esc_html__( "产品分类", "cyberatlaslab-child" ),
+		"singular_name" => esc_html__( "产品分类", "cyberatlaslab-child" ),
+		"menu_name" => esc_html__( "产品分类", "cyberatlaslab-child" ),
+		"all_items" => esc_html__( "所有分类", "cyberatlaslab-child" ),
+		"edit_item" => esc_html__( "编辑分类", "cyberatlaslab-child" ),
+		"view_item" => esc_html__( "查看分类", "cyberatlaslab-child" ),
+		"update_item" => esc_html__( "更新分类", "cyberatlaslab-child" ),
+		"add_new_item" => esc_html__( "添加新分类", "cyberatlaslab-child" ),
+		"new_item_name" => esc_html__( "新分类名称", "cyberatlaslab-child" ),
+		"parent_item" => esc_html__( "父级分类", "cyberatlaslab-child" ),
+		"parent_item_colon" => esc_html__( "父级分类:", "cyberatlaslab-child" ),
+		"search_items" => esc_html__( "搜索分类", "cyberatlaslab-child" ),
+		"popular_items" => esc_html__( "热门分类", "cyberatlaslab-child" ),
+		"separate_items_with_commas" => esc_html__( "用逗号分隔分类", "cyberatlaslab-child" ),
+		"add_or_remove_items" => esc_html__( "添加或移除分类", "cyberatlaslab-child" ),
+		"choose_from_most_used" => esc_html__( "从常用分类中选择", "cyberatlaslab-child" ),
+		"not_found" => esc_html__( "未找到分类", "cyberatlaslab-child" ),
+		"no_terms" => esc_html__( "暂无分类", "cyberatlaslab-child" ),
+		"filter_by_item" => esc_html__( "按类别筛选", "cyberatlaslab-child" ),
+		"items_list_navigation" => esc_html__( "产品列表导航", "cyberatlaslab-child" ),
+		"items_list" => esc_html__( "产品列表", "cyberatlaslab-child" ),
+		"back_to_items" => esc_html__( "返回商品列表", "cyberatlaslab-child" ),
+		"name_field_description" => esc_html__( "分类名称下方文案", "cyberatlaslab-child" ),
+		"parent_field_description" => esc_html__( "父级下拉菜单下方文字", "cyberatlaslab-child" ),
+		"slug_field_description" => esc_html__( "分类别名字段描述", "cyberatlaslab-child" ),
+		"desc_field_description" => esc_html__( "分类字段描述", "cyberatlaslab-child" ),
+		"template_name" => esc_html__( "模板名称", "cyberatlaslab-child" ),
+	];
+
+	
+	$args = [
+		"label" => esc_html__( "产品分类", "cyberatlaslab-child" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'product-cat', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"show_tagcloud" => false,
+		"rest_base" => "product-cat",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"rest_namespace" => "wp/v2",
+		"show_in_quick_edit" => false,
+		"sort" => false,
+		"show_in_graphql" => false,
+	];
+	register_taxonomy( "product-cat", [ "product" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes_product_cat' );
