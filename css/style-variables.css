@@ -1,0 +1,588 @@
+/* =============================================================================
+   CSS 变量系统 - CyberAtlasLab
+
+   版本：2.2.0 (简体中文注释重构版)
+   说明：
+   1. 本文件包含 Design Tokens、CAL 全站全局变量及 CRS 评测专用变量
+   2. 规范层级：基础令牌 -> 语义与组件级令牌 -> 专区组件变量
+   3. 变量命名规则：--cal-[类别]-[属性]-[变体] / --crs-[属性]
+   =============================================================================
+   [目录索引 / TOC]
+   1. 基础设计令牌 (FOUNDATION DESIGN TOKENS)
+      1.1 颜色系统 (Colors)
+      1.2 字体与文本 (Typography)
+      1.3 间距系统 (Spacing)
+      1.4 尺寸与容器 (Sizing & Layout)
+      1.5 圆角与边框 (Radii & Borders)
+      1.6 阴影与视效 (Shadows, Gradients & Filters)
+      1.7 动态与交互 (Transitions, Motion & Z-Index)
+   2. CYBER REVIEW SINGLE (CRS) 评测组件专区
+   3. 全局重置与 Astra 主题兼容样式 (GLOBAL RESET & BASE STYLES)
+   ============================================================================= */
+
+:root {
+   /* =========================================================================
+      1. 基础设计令牌 (FOUNDATION DESIGN TOKENS)
+      ========================================================================= */
+
+   /* -------------------------------------------------------------------------
+      1.1 颜色系统 (Colors)
+      ------------------------------------------------------------------------- */
+   /* 品牌主色 */
+   --cal-primary: #2563EB;
+   --cal-primary-hover: #1D4ED8;
+   --cal-primary-dark: #1E40AF;
+   --cal-primary-bg: #EFF6FF;
+   --cal-primary-light: rgba(37, 99, 235, 0.04);
+   --cal-primary-lighter: rgba(37, 99, 235, 0.06);
+   --cal-primary-100: rgba(37, 99, 235, 0.1);
+   --cal-primary-200: #bfdbfe;
+   --cal-primary-border: rgba(37, 99, 235, 0.2);
+   --cal-primary-border-medium: rgba(37, 99, 235, 0.3);
+
+   /* 功能与状态色 */
+   --cal-success: #059669;
+   --cal-success-hover: #047857;
+   --cal-success-bg: #ECFDF5;
+   --cal-success-light: rgba(5, 150, 105, 0.1);
+   --cal-success-lighter: rgba(5, 150, 105, 0.06);
+   --cal-success-border: rgba(5, 150, 105, 0.25);
+   --cal-success-backdrop: rgba(5, 150, 105, 0.12);
+   --cal-success-400: #34D399;
+
+   --cal-warning: #F59E0B;
+   --cal-warning-hover: #D97706;
+   --cal-warning-bg: #FFFBEB;
+
+   --cal-danger: #DC2626;
+   --cal-danger-hover: #B91C1C;
+   --cal-danger-bg: #FEF2F2;
+   --cal-danger-light: rgb(254, 242, 242);
+   --cal-danger-lighter: rgba(254, 242, 242, 0.6);
+
+   --cal-urgent-color: #F87171;
+
+   /* 中性色板 */
+   --cal-white: #FFFFFF;
+   --cal-black: #000000;
+   --cal-gray-50: #F8FAFC;
+   --cal-gray-100: #F1F5F9;
+   --cal-gray-200: #E2E8F0;
+   --cal-gray-200-alt: #E5E7EB;
+   --cal-gray-300: #CBD5E1;
+   --cal-gray-400: #94A3B8;
+   --cal-gray-500: #64748B;
+   --cal-gray-600: #475569;
+   --cal-gray-700: #334155;
+   --cal-gray-800: #1E293B;
+   --cal-gray-900: #0F172A;
+   --cal-gray-bg-gradient: #f5f7fa;
+   --cal-gray-text-fluid: #556070;
+
+   /* 语义化别名 */
+   --cal-bg: var(--cal-gray-50);
+   --cal-bg-card: var(--cal-white);
+   --cal-text: var(--cal-gray-900);
+   --cal-text-secondary: var(--cal-gray-700);
+   --cal-text-muted: var(--cal-gray-500);
+   --cal-text-light: var(--cal-gray-400);
+   --cal-text-placeholder: rgba(15, 23, 42, 0.4);
+   --cal-border: var(--cal-gray-200);
+   --cal-border-hover: var(--cal-gray-300);
+   --cal-border-light: rgba(0, 0, 0, 0.05);
+   --cal-border-subtle: rgba(15, 23, 42, 0.1);
+   --cal-border-fluid: #E8EDF3;
+   --cal-border-fluid-hover: #D1D8E0;
+   --cal-divider: var(--cal-gray-100);
+   --cal-print-border: #CCCCCC;
+
+   /* 徽章颜色 */
+   --cal-badge-primary-bg: #DBEAFE;
+   --cal-badge-primary-text: #1E40AF;
+   --cal-badge-success-bg: #D1FAE5;
+   --cal-badge-success-text: #065F46;
+   --cal-badge-warning-bg: #FEF3C7;
+   --cal-badge-warning-text: #92400E;
+   --cal-badge-danger-bg: #FEE2E2;
+   --cal-badge-danger-text: #991B1B;
+   --cal-badge-neutral-bg: var(--cal-gray-200);
+   --cal-badge-neutral-text: var(--cal-gray-600);
+
+   /* 遮罩与毛玻璃效果颜色 */
+   --cal-overlay-light: rgba(255, 255, 255, 0.9);
+   --cal-overlay-dark: rgba(0, 0, 0, 0.5);
+   --cal-glass-alert-text: rgba(255, 255, 255, 0.85);
+   --cal-glass-alert-bg: rgba(255, 255, 255, 0.08);
+   --cal-glass-alert-border: rgba(255, 255, 255, 0.1);
+   --cal-glass-alert-text-light: var(--cal-gray-700);
+   --cal-glass-alert-bg-light: var(--cal-gray-100);
+   --cal-glass-alert-border-light: var(--cal-gray-200);
+
+   /* 特定组件专属颜色 */
+   --cal-hero-gradient-start: #1e3a5f;
+   --cal-hero-gradient-mid: #0f172a;
+   --cal-hero-gradient-end: #1e293b;
+   --cal-hero-logo-bg: rgba(255, 255, 255, 0.1);
+   --cal-score-label: rgba(255, 255, 255, 0.7);
+   --cal-list-svg-light: rgba(34, 197, 94, 1);
+   --cal-hero-btn-sec-border: rgba(255, 255, 255, 0.3);
+   --cal-hero-btn-sec-bg-hover: rgba(255, 255, 255, 0.04);
+   --cal-hero-btn-sec-border-hover: rgba(255, 255, 255, 0.25);
+   --cal-card-logo-bg: rgba(255, 255, 255, 0.15);
+   --cal-card-rating-bg: rgba(0, 0, 0, 0.4);
+   --cal-grid-texture: rgba(255, 255, 255, 0.03);
+   --cal-cta-trust-bg: rgba(255, 255, 255, 0.6);
+   --cal-border-footer-subtle: rgba(255, 255, 255, 0.06);
+
+   /* -------------------------------------------------------------------------
+      1.2 字体与文本 (Typography)
+      ------------------------------------------------------------------------- */
+   /* 字体族 */
+   --cal-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+   --cal-font-heading: 'Inter', 'Poppins', var(--cal-font-sans);
+   --cal-font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+   /* 字号 */
+   --cal-text-2xs: 9px;
+   --cal-text-xs: 11px;
+   --cal-text-sm: 12px;
+   --cal-text-sl: 13px;
+   --cal-text-base: 14px;
+   --cal-text-md: 15px;
+   --cal-text-md-plus: 14.5px;
+   --cal-text-lg: 16px;
+   --cal-text-xl: 17px;
+   --cal-text-2xl: 18px;
+   --cal-text-2-5xl: 22px;
+   --cal-text-3xl: 20px;
+   --cal-text-3-5xl: 28px;
+   --cal-text-4xl: 24px;
+   --cal-text-5xl: 32px;
+   --cal-text-52: 52px;
+   --cal-text-6xl: 36px;
+   --cal-text-7xl: 42px;
+   --cal-text-8xl: 48px;
+   --cal-text-9xl: 56px;
+
+   /* 字重 */
+   --cal-font-normal: 400;
+   --cal-font-medium: 500;
+   --cal-font-semibold: 600;
+   --cal-font-bold: 700;
+   --cal-font-extrabold: 800;
+   --cal-font-extrabold-plus: 750;
+
+   /* 行高 */
+   --cal-leading-080: 0.8;
+   --cal-leading-none: 1;
+   --cal-leading-120: 1.2;
+   --cal-leading-tight: 1.25;
+   --cal-leading-130: 1.3;
+   --cal-leading-snug: 1.35;
+   --cal-leading-snug-alt: 1.4;
+   --cal-leading-140: 1.4;
+   --cal-leading-normal: 1.5;
+   --cal-leading-160: 1.6;
+   --cal-leading-165: 1.65;
+   --cal-leading-relaxed: 1.75;
+   --cal-leading-180: 1.8;
+
+   /* 字间距 */
+   --cal-tracking-tighter: -0.02em;
+   --cal-tracking-tight-hero: -0.01em;
+   --cal-tracking-tight: -1px;
+   --cal-tracking-tightest: 0.3px;
+   --cal-tracking-normal: 0.5px;
+   --cal-tracking-wide: 0.8px;
+   --cal-tracking-wider: 1px;
+
+   /* -------------------------------------------------------------------------
+      1.3 间距系统 (Spacing)
+      ------------------------------------------------------------------------- */
+   --cal-space-0: 0;
+   --cal-space-0-5: 1px;
+   --cal-space-1: 2px;
+   --cal-space-1-5: 3px;
+   --cal-space-2: 4px;
+   --cal-space-2-5: 5px;
+   --cal-space-3: 6px;
+   --cal-space-4: 8px;
+   --cal-space-4-5: 9px;
+   --cal-space-5: 10px;
+   --cal-space-6: 12px;
+   --cal-space-7: 14px;
+   --cal-space-7-5: 15px;
+   --cal-space-8: 16px;
+   --cal-space-9: 18px;
+   --cal-space-10: 20px;
+   --cal-space-12: 24px;
+   --cal-space-13: 25px;
+   --cal-space-14: 28px;
+   --cal-space-15: 30px;
+   --cal-space-16: 32px;
+   --cal-space-18: 36px;
+   --cal-space-20: 40px;
+   --cal-space-21: 42px;
+   --cal-space-24: 48px;
+   --cal-space-30: 60px;
+   --cal-space-32: 64px;
+   --cal-space-36: 72px;
+
+   /* -------------------------------------------------------------------------
+      1.4 尺寸与容器 (Sizing & Layout)
+      ------------------------------------------------------------------------- */
+   /* 图标尺寸 */
+   --cal-icon-xs: 12px;
+   --cal-icon-badge: 12px;
+   --cal-icon-sm: 16px;
+   --cal-icon-sm-plus: 14px;
+   --cal-icon-badge-editor: 14px;
+   --cal-icon-md: 18px;
+   --cal-icon-lg: 20px;
+   --cal-icon-xl: 24px;
+   --cal-icon-xl-plus: 22px;
+   --cal-icon-2xl: 32px;
+   --cal-icon-2-5xl: 28px;
+   --cal-icon-3xl: 36px;
+   --cal-icon-4xl: 42px;
+   --cal-icon-5xl: 56px;
+   --cal-icon-6xl: 64px;
+
+   /* 热区与点击区域尺寸 */
+   --cal-touch-sm: 32px;
+   --cal-touch-md: 40px;
+   --cal-touch-lg: 44px;
+   --cal-touch-xl: 48px;
+
+   /* 容器最大宽度 */
+   --cal-container-sm: 640px;
+   --cal-container-md: 768px;
+   --cal-container-faq: 920px;
+   --cal-container-lg: 1024px;
+   --cal-container-xl: 1200px;
+   --cal-container-max: 1200px;
+
+   /* 顶栏 Header 高度 */
+   --cal-header-height: 70px;
+   --cal-header-height-tablet: 65px;
+   --cal-header-height-mobile: 60px;
+
+   /* 组件专属尺寸规格 */
+   --cal-hero-image-height: 320px;
+   --cal-hero-image-height-mobile: 200px;
+   --cal-card-image-height: 100px;
+   --cal-search-height: 120px;
+   --cal-search-height-mobile: 90px;
+   --cal-hero-logo-size: 70px;
+   --cal-hero-logo-size-desktop: 72px;
+   --cal-hero-logo-size-tablet: 64px;
+   --cal-hero-logo-size-mobile: 48px;
+   --cal-hero-logo-icon-size: 44px;
+   --cal-hero-logo-icon-size-desktop: 54px;
+   --cal-hero-logo-icon-size-tablet: 40px;
+   --cal-hero-logo-icon-size-mobile: 32px;
+   --cal-card-logo-size: 48px;
+   --cal-card-logo-icon-size: 32px;
+   --cal-product-name-min-width: 85px;
+   --cal-product-name-min-width-mobile: 70px;
+   --cal-hero-button-max-width: 220px;
+   --cal-meta-dot-size: 3px;
+   --cal-alert-dot-size: 6px;
+   --cal-star-gap: 2px;
+   --cal-card-star-gap: 1px;
+   --cal-hero-star-gap: 3px;
+   --cal-category-top-bar-height: 4px;
+   --cal-grid-texture-size: 20px;
+   --cal-card-hover-top-border-width: 2px;
+   --cal-sidebar-width: 320px;
+   --cal-anchor-scroll-margin: 100px;
+   --cal-anchor-offset-mobile: 90px;
+   --cal-anchor-offset-toc: 140px;
+   --cal-toc-mobile-top: 76px;
+   --cal-cta-s-min-height: 60px;
+   --cal-cta-m-min-height: 110px;
+   --cal-hero-cta-line-height: 3px;
+   --cal-snapshot-label-width: 170px;
+   --cal-snapshot-label-width-tablet: 150px;
+   --cal-snapshot-label-width-small: 95px;
+   --cal-sidebar-logo-size: 56px;
+   --cal-sidebar-logo-icon-size: 42px;
+   --cal-sidebar-toc-scrollbar-width: 4px;
+   --cal-score-circle-col-width: 180px;
+   --cal-score-circle-size: 140px;
+   --cal-score-circle-stroke: 10;
+   --cal-score-circle-dasharray: 408;
+   --cal-popover-width: 300px;
+   --cal-popover-width-mobile: 320px;
+   --cal-popover-width-small: 300px;
+   --cal-newsletter-input-height: 46px;
+   --cal-newsletter-input-width: 260px;
+   --cal-newsletter-input-width-tablet: 220px;
+   --cal-newsletter-btn-width: 140px;
+
+   /* FAQ 折叠组件精确内边距 */
+   --cal-faq-toggler-x: 26px;
+   --cal-faq-toggler-y: 22px;
+   --cal-faq-body-x: 26px;
+   --cal-faq-body-y: 22px;
+
+   /* 页脚 Footer 专属尺寸 */
+   --cal-footer-brand-width: 280px;
+   --cal-footer-logo-size: 48px;
+   --cal-footer-logo-icon-size-mobile: 28px;
+   --cal-footer-tagline-max-width-tablet: 350px;
+   --cal-footer-trust-item-max-width-mobile: 220px;
+   --cal-footer-nav-max-height: 300px;
+   --cal-footer-nav-link-padding-y: 10px;
+
+   /* -------------------------------------------------------------------------
+      1.5 圆角与边框 (Radii & Borders)
+      ------------------------------------------------------------------------- */
+   /* 圆角半径 */
+   --cal-radius-none: 0;
+   --cal-radius-xs: 2px;
+   --cal-radius-sm: 4px;
+   --cal-radius-md: 6px;
+   --cal-radius-lg: 8px;
+   --cal-radius-sl: 10px;
+   --cal-radius-xl: 12px;
+   --cal-sidebar-card-radius: 12px;
+   --cal-radius-2xl: 16px;
+   --cal-radius-3xl: 20px;
+   --cal-radius-full: 9999px;
+
+   /* 边框样式与粗细 */
+   --cal-border-width: 1px;
+   --cal-border-width-2: 2px;
+   --cal-border-width-3: 3px;
+   --cal-border-style: solid;
+   --cal-stroke-thin: 1.5;
+   --cal-stroke-normal: 2;
+   --cal-stroke-medium: 2.5;
+   --cal-stroke-thick: 2.8;
+   --cal-stroke-semibold: 3;
+   --cal-stroke-heavy: 3.5;
+
+   /* -------------------------------------------------------------------------
+      1.6 阴影与视效 (Shadows, Gradients & Filters)
+      ------------------------------------------------------------------------- */
+   /* 通用阶梯阴影 */
+   --cal-shadow-none: none;
+   --cal-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+   --cal-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+   --cal-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+   --cal-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08);
+   --cal-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+   --cal-shadow-2xl: 0 15px 50px rgba(0, 0, 0, 0.15);
+   --cal-shadow-card-hover: 0px 4px 12px -1px rgba(148, 163, 184, 0.12);
+
+   /* 专用组件阴影与色板 */
+   --cal-card-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.01);
+   --cal-card-shadow-hover: 0 12px 32px rgba(15, 23, 42, 0.03);
+   --cal-card-shadow-hover-alt: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+   --cal-featured-hover-shadow: 0 20px 50px rgba(37, 99, 235, 0.18);
+   --cal-showcase-hover-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+   --cal-hero-hover-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+   --cal-category-hover-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+   --cal-faq-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+   --cal-faq-active-shadow: 0 4px 20px rgba(37, 99, 235, 0.12);
+   --cal-rank-badge-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+   --cal-category-icon-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+   --cal-pulse-dot-shadow: 0 0 8px rgba(5, 150, 105, 0.6);
+   --cal-pulse-dot-shadow-light: 0 0 6px rgba(5, 150, 105, 0.4);
+   --cal-pulse-dot-shadow-dim: 0 0 4px rgba(5, 150, 105, 0.3);
+   --cal-hero-bg-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 2px 8px rgba(37, 99, 235, 0.03);
+   --cal-hero-cta-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 4px 10px rgba(0, 0, 0, 0.02), 0 6px 14px rgba(37, 99, 235, 0.03);
+   --cal-hero-cta-shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.04), 0 6px 14px rgba(0, 0, 0, 0.03), 0 14px 28px rgba(37, 99, 235, 0.07);
+   --cal-hero-cta-button-shadow-hover: 0 8px 20px rgba(37, 99, 235, 0.4);
+   --cal-hero-cta-shadow-tablet: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.01);
+   --cal-cta-btn-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.15);
+   --cal-cta-btn-shadow-hover: 0 4px 12px rgba(37, 99, 235, 0.2);
+   --cal-sidebar-cta-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+   --cal-toc-mobile-open-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+   --cal-popover-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
+   --cal-faq-home-shadow: 0 4px 25px rgba(15, 23, 42, 0.03);
+   --cal-faq-fluid-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+   --cal-faq-fluid-shadow-hover: 0 2px 8px rgba(15, 23, 42, 0.06);
+   --cal-newsletter-input-shadow: inset 0 2px 16px rgba(0, 0, 0, 0.05);
+   --cal-newsletter-input-focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.12);
+
+   /* 渐变与模糊滤镜 */
+   --cal-hero-overlay-gradient: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+   --cal-featured-gradient: linear-gradient(180deg, var(--cal-white) 0%, rgba(37, 99, 235, 0.03) 100%);
+   --cal-blur-sm: blur(8px);
+   --cal-blur-md: blur(10px);
+   --cal-blur-lg: blur(12px);
+
+   /* -------------------------------------------------------------------------
+      1.7 动态与交互 (Transitions, Motion & Z-Index)
+      ------------------------------------------------------------------------- */
+   /* 缓动曲线 */
+   --cal-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+   --cal-ease-in: cubic-bezier(0.4, 0, 1, 1);
+   --cal-ease-out: cubic-bezier(0, 0, 0.2, 1);
+   --cal-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+   --cal-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+   /* 动画持续时间 */
+   --cal-duration-fast: 150ms;
+   --cal-duration-normal: 200ms;
+   --cal-duration-slow: 300ms;
+   --cal-duration-slower: 350ms;
+
+   /* 基础组合过渡 */
+   --cal-transition-fast: var(--cal-duration-fast) var(--cal-ease-default);
+   --cal-transition-normal: var(--cal-duration-normal) var(--cal-ease-default);
+   --cal-transition-slow: var(--cal-duration-slow) var(--cal-ease-default);
+   --cal-transition-colors: color var(--cal-duration-normal) var(--cal-ease-default),
+      background-color var(--cal-duration-normal) var(--cal-ease-default),
+      border-color var(--cal-duration-normal) var(--cal-ease-default);
+   --cal-transition-transform: transform var(--cal-duration-normal) var(--cal-ease-default);
+   --cal-transition-all: all 0.25s var(--cal-ease-smooth);
+
+   /* 组件专属过渡与动画 */
+   --cal-transition-hero: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s var(--cal-ease-default), box-shadow 0.4s var(--cal-ease-default);
+   --cal-transition-card: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 0.4s var(--cal-ease-default), box-shadow 0.4s var(--cal-ease-default);
+   --cal-transition-category: all 0.4s var(--cal-ease-default) 0.05s;
+   --cal-transition-category-bar: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+   --cal-transition-cta: background 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+   --cal-transition-badge-editor: all 0.2s ease-in-out;
+   --cal-transition-card-link: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+   --cal-animation-pulse: 2s ease-in-out infinite;
+
+   /* Z-Index 层级系统 */
+   --cal-z-base: 1;
+   --cal-z-logo: 2;
+   --cal-z-dropdown: 100;
+   --cal-z-sticky: 200;
+   --cal-z-fixed: 300;
+   --cal-z-modal-backdrop: 400;
+   --cal-z-modal: 500;
+   --cal-z-popover: 600;
+   --cal-z-tooltip: 700;
+   --cal-z-popover-mobile: 99999;
+   --cal-z-mega-menu: 999999;
+   --cal-z-mobile-menu: 1000000;
+   --cal-z-max: 9999999;
+
+
+   /* =========================================================================
+      2. CYBER REVIEW SINGLE (CRS) 评测组件专区
+      ========================================================================= */
+   --crs-primary: #2563EB;
+   --crs-primary-hover: #1D4ED8;
+   --crs-primary-bg: #EFF6FF;
+   --crs-success: #059669;
+   --crs-success-bg: #ECFDF5;
+   --crs-warning: #D97706;
+   --crs-danger: #DC2626;
+   --crs-danger-bg: #FEF2F2;
+   --crs-white: #FFFFFF;
+   --crs-gray-50: #F8FAFC;
+   --crs-gray-100: #F1F5F9;
+   --crs-gray-200: #E2E8F0;
+   --crs-gray-300: #CBD5E1;
+   --crs-gray-400: #94A3B8;
+   --crs-gray-500: #64748B;
+   --crs-gray-600: #475569;
+   --crs-gray-700: #334155;
+   --crs-gray-800: #1E293B;
+   --crs-gray-900: #0F172A;
+   --crs-radius: 12px;
+   --crs-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =============================================================================
+   3. 全局重置与 Astra 主题兼容样式 (GLOBAL RESET & BASE STYLES)
+   ============================================================================= */
+
+/* 选中文本高亮 */
+::selection {
+   background: var(--cal-primary);
+   color: var(--cal-white);
+}
+
+::-moz-selection {
+   background: var(--cal-primary);
+   color: var(--cal-white);
+}
+
+/* 防止页面横向溢出 */
+html,
+html.lenis,
+body {
+   overflow-x: hidden;
+   max-width: 100%;
+}
+
+/* 平滑滚动 */
+html {
+   scroll-behavior: smooth;
+}
+
+/* 统一盒模型 */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* 可访问性键盘焦点提示 */
+:focus-visible {
+   outline: var(--cal-border-width-2) var(--cal-border-style) var(--cal-primary);
+   outline-offset: var(--cal-space-1);
+}
+
+/* 基础链接样式 */
+a {
+   color: inherit;
+   text-decoration: none;
+   transition: color var(--cal-transition-normal);
+}
+
+/* 响应式图片处理 */
+img {
+   max-width: 100%;
+   height: auto;
+   vertical-align: middle;
+}
+
+/* 按钮基础重置 */
+button {
+   font-family: inherit;
+   cursor: pointer;
+}
+
+/* Astra 主题容器防溢出兼容 */
+.site,
+.hfeed,
+.site-content,
+.ast-container {
+   max-width: 100%;
+   overflow-x: hidden;
+}
+
+/* 全局默认字体应用 */
+body {
+   font-family: var(--cal-font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.entry-title,
+.ast-archive-title {
+   font-family: var(--cal-font-heading);
+}
+
+code,
+pre,
+kbd,
+samp,
+.wp-block-code {
+   font-family: var(--cal-font-mono);
+}
