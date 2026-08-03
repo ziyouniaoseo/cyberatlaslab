@@ -1,0 +1,3194 @@
+[
+    {
+        "key": "group_6a6f1ec30e726",
+        "title": "分类页数据",
+        "fields": [
+            {
+                "key": "field_6a6f1ec2476d8",
+                "label": "Hero 简介",
+                "name": "cat_hero_intro",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "H1 直接使用 WordPress 页面标题 post_title，此字段只负责 Hero Intro，不重复创建 H1 字段",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "rows": "",
+                "placeholder": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_6a6f24c0476d9",
+                "label": "测试产品数",
+                "name": "cat_hero_tested",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "例如：28，前端显示为 28 VPNs Tested",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": 1,
+                "max": 1000,
+                "allow_in_bindings": 1,
+                "placeholder": 10,
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a6f251e476da",
+                "label": "测试时长",
+                "name": "cat_hero_hours",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "例如：1,200+ Hours of Testing",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "1,200+ Hours of Testing",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a6f255c476db",
+                "label": "快速筛选",
+                "name": "cat_hero_filters",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "重复项结构：• filter_label (Text): 标签名称（例：\"Best for Streaming\"）• filter_anchor (Text): 锚点ID（例：\"#pick-nordvpn\" 或 \"#comparison\"）",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a6f25b0476dc",
+                        "label": "筛选标签",
+                        "name": "filter_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "例如 Best for Streaming → #picks",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a6f255c476db"
+                    },
+                    {
+                        "key": "field_6a6f262e476dd",
+                        "label": "锚点",
+                        "name": "filter_anchor",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a6f255c476db"
+                    }
+                ]
+            },
+            {
+                "key": "field_6a6f2679476de",
+                "label": "Top 产品",
+                "name": "cat_top_products",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "🔥 全页核心：• 关联 Post Type: product (单品评测页)• 数量限制：Min 1, Max 5• 顺序即排名：拖拽排序直接决定前台 #1 ~ #5 展现",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "product"
+                ],
+                "post_status": [
+                    "publish"
+                ],
+                "taxonomy": "",
+                "filters": [
+                    "search",
+                    "post_type",
+                    "taxonomy"
+                ],
+                "return_format": "object",
+                "min": 1,
+                "max": 5,
+                "allow_in_bindings": 1,
+                "elements": "",
+                "bidirectional": 0,
+                "bidirectional_target": []
+            },
+            {
+                "key": "field_6a6f2777476df",
+                "label": "测试方法标题",
+                "name": "cat_how_test_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "折叠框触发头文本。默认值：\"How We Test and Rank VPN Services\"",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "How We Test and Rank VPN Services",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a6f27b6476e0",
+                "label": "测试方法内容",
+                "name": "cat_how_test_content",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "折叠框展开后的富文本内容，支持加粗、列表与内链。",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_6a6f2822476e1",
+                "label": "对比因素",
+                "name": "cat_factors",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 6,
+                "max": 6,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a6f288d476e2",
+                        "label": "因素 Key",
+                        "name": "factor_key",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "security": "Security & Encryption (安全性与加密)",
+                            "speed": "Speed & Performance (速度与性能)",
+                            "streaming": "Streaming Unblock (流媒体解锁)",
+                            "privacy": "Privacy & No-Logs (隐私与日志策略)",
+                            "value": "Pricing & Value (价格与性价比)",
+                            "support": "Customer Support (客户支持服务)",
+                            "malware": "Malware Protection (病毒与恶意软件拦截)",
+                            "firewall": "Network & Firewall (网络防火墙安全)",
+                            "parental": "Parental Control (儿童上网监护)",
+                            "pass_gen": "Password Generator (密码生成与强度)",
+                            "autofill": "Auto-fill & Sync (自动填充与多端同步)",
+                            "dark_web": "Dark Web Monitoring (暗网泄露监控)",
+                            "usability": "Ease of Use (界面友好度与易用性)",
+                            "compatibility": "Multi-device (多设备兼容性)",
+                            "audit": "Independent Audit (第三方安全审计)",
+                            "money_back": "Money-back Guarantee (退款保障政策)",
+                            "features": "Extra Features (特色功能扩展)"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "allow_in_bindings": 1,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "create_options": 0,
+                        "save_options": 0,
+                        "parent_repeater": "field_6a6f2822476e1"
+                    },
+                    {
+                        "key": "field_6a6f2a6f476e3",
+                        "label": "因素内容",
+                        "name": "factor_text",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "rows": "",
+                        "placeholder": "",
+                        "new_lines": "",
+                        "parent_repeater": "field_6a6f2822476e1"
+                    }
+                ]
+            },
+            {
+                "key": "field_6a6f2ace476e4",
+                "label": "相关分类",
+                "name": "cat_related_cats",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a6f2b29476e5",
+                        "label": "关联图标",
+                        "name": "rel_icon",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "shield": "Shield \/ Security (盾牌\/安全)",
+                            "lock": "Lock \/ Privacy (锁\/隐私)",
+                            "speed": "Speed \/ Lightning (闪电\/速度)",
+                            "eye": "Eye \/ Monitoring (眼睛\/监控)",
+                            "key": "Key \/ Passwords (钥匙\/密码)",
+                            "globe": "Globe \/ Network (地球\/网络)"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "allow_in_bindings": 1,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "create_options": 0,
+                        "save_options": 0,
+                        "parent_repeater": "field_6a6f2ace476e4"
+                    },
+                    {
+                        "key": "field_6a6f2b5a476e6",
+                        "label": "关联名称",
+                        "name": "rel_name",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a6f2ace476e4"
+                    },
+                    {
+                        "key": "field_6a6f2ba3476e7",
+                        "label": "关联描述",
+                        "name": "rel_desc",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "rows": "",
+                        "placeholder": "",
+                        "new_lines": "",
+                        "parent_repeater": "field_6a6f2ace476e4"
+                    },
+                    {
+                        "key": "field_6a6f2bb0476e8",
+                        "label": "关联网址",
+                        "name": "rel_url",
+                        "aria-label": "",
+                        "type": "page_link",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "post_type": [
+                            "page"
+                        ],
+                        "post_status": [
+                            "publish"
+                        ],
+                        "taxonomy": "",
+                        "allow_archives": 1,
+                        "multiple": 0,
+                        "allow_null": 0,
+                        "allow_in_bindings": 0,
+                        "parent_repeater": "field_6a6f2ace476e4"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a65f433d5a1f",
+        "title": "评分指标解释",
+        "fields": [
+            {
+                "key": "field_6a65ef20d2e95",
+                "label": "评分指标详情",
+                "name": "score_library",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a65ef40d2e96",
+                        "label": "评分维度",
+                        "name": "dimension_key",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "选择品类对应的评分维度",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "security": "🌐 [通用] Security (安全防护)",
+                            "speed": "🌐 [通用] Speed & Performance (速度性能)",
+                            "privacy": "🌐 [通用] Privacy & Logging (隐私策略)",
+                            "value": "🌐 [通用] Value & Pricing (性价比)",
+                            "support": "🌐 [通用] Customer Support (客户支持)",
+                            "usability": "🌐 [通用] Ease of Use (易用性)",
+                            "features": "🌐 [通用] Core Features (核心功能)",
+                            "servers": "🛡️ [VPN] Server Network (服务器网络)",
+                            "streaming": "🛡️ [VPN] Streaming Unblock (流媒体解锁)",
+                            "apps": "🛡️ [VPN] Apps & Compatibility (多平台支持)",
+                            "malware": "🦠 [杀毒] Malware Detection (病毒查杀率)",
+                            "system_load": "🦠 [杀毒] System Impact (系统资源消耗)",
+                            "autofill": "🔑 [密码] Autofill & Vault (自动填充与密码库)",
+                            "screen_time": "👨‍👩‍👧 [家长] Screen Time Management (屏幕时间管理)",
+                            "filtering": "👨‍👩‍👧 [家长] Content Filtering (内容过滤)",
+                            "location": "👨‍👩‍👧 [家长] Location Tracking (实时位置追踪)"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 1,
+                        "allow_in_bindings": 1,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "create_options": 0,
+                        "save_options": 0,
+                        "parent_repeater": "field_6a65ef20d2e95"
+                    },
+                    {
+                        "key": "field_6a65f03fd2e97",
+                        "label": "前端显示名称",
+                        "name": "dimension_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "作为前端显示的标题，如：速度 (Speed) • 安全 (Security) • 隐私 (Privacy) • 服务器 (Servers) • 性价比 (Value) • 客户支持 (Support)等",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a65ef20d2e95"
+                    },
+                    {
+                        "key": "field_6a65f06cd2e98",
+                        "label": "测评考核点",
+                        "name": "eval_points",
+                        "aria-label": "",
+                        "type": "textarea",
+                        "instructions": "测评考察点，一行一个。\r\n如：\r\nEncryption\r\nKill Switch\r\nDNS Leak",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "rows": "",
+                        "placeholder": "",
+                        "new_lines": "",
+                        "parent_repeater": "field_6a65ef20d2e95"
+                    },
+                    {
+                        "key": "field_6a65f145d2e99",
+                        "label": "方法论跳转锚点",
+                        "name": "anchor",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "方法论页面的 HTML 锚点 ID（如 security）。\r\n留空则默认使用 dimension_key 的值。",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a65ef20d2e95"
+                    }
+                ]
+            },
+            {
+                "key": "field_6a67355c2a6aa",
+                "label": "分数工具提示",
+                "name": "score_tooltip_note",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "site-options"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a66048ac5af5",
+        "title": "评分看板",
+        "fields": [
+            {
+                "key": "field_6a660fd240381",
+                "label": "评分看板标题",
+                "name": "scoring_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认填写Scoring Breakdown，可自定义",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Scoring Breakdown",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a66e5500d94b",
+                "label": "综合评分",
+                "name": "score_overall",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": 1,
+                "max": 10,
+                "allow_in_bindings": 1,
+                "placeholder": "9.3",
+                "step": "0.1",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a65f89e23920",
+                "label": "评分明细",
+                "name": "scoring_breakdown",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a65f8ba23921",
+                        "label": "评分维度",
+                        "name": "score_key",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "选择对应的评分维度识别码。",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "security": "🌐 [通用] Security (安全防护)",
+                            "speed": "🌐 [通用] Speed & Performance (速度性能)",
+                            "privacy": "🌐 [通用] Privacy & Logging (隐私策略)",
+                            "value": "🌐 [通用] Value & Pricing (性价比)",
+                            "support": "🌐 [通用] Customer Support (客户支持)",
+                            "usability": "🌐 [通用] Ease of Use (易用性)",
+                            "features": "🌐 [通用] Core Features (核心功能)",
+                            "servers": "🛡️ [VPN] Server Network (服务器网络)",
+                            "streaming": "🛡️ [VPN] Streaming Unblock (流媒体解锁)",
+                            "apps": "🛡️ [VPN] Apps & Compatibility (多平台支持)",
+                            "malware": "🦠 [杀毒] Malware Detection (病毒查杀率)",
+                            "system_load": "🦠 [杀毒] System Impact (系统资源消耗)",
+                            "autofill": "🔑 [密码] Autofill & Vault (自动填充与密码库)",
+                            "screen_time": "👨‍👩‍👧 [家长] Screen Time Management (屏幕时间管理)",
+                            "filtering": "👨‍👩‍👧 [家长] Content Filtering (内容过滤)",
+                            "location": "👨‍👩‍👧 [家长] Location Tracking (实时位置追踪)"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 1,
+                        "allow_in_bindings": 0,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "create_options": 0,
+                        "save_options": 0,
+                        "parent_repeater": "field_6a65f89e23920"
+                    },
+                    {
+                        "key": "field_6a65f90e23922",
+                        "label": "前端显示名称",
+                        "name": "score_label",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "作为前端显示的标题，如：速度 (Speed) • 安全 (Security) • 隐私 (Privacy) • 服务器 (Servers) • 性价比 (Value) • 客户支持 (Support)等",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "Speed",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a65f89e23920"
+                    },
+                    {
+                        "key": "field_6a65f92123923",
+                        "label": "具体分数",
+                        "name": "score_value",
+                        "aria-label": "",
+                        "type": "number",
+                        "instructions": "如：9.5",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "min": 1,
+                        "max": 10,
+                        "allow_in_bindings": 1,
+                        "placeholder": "9.6",
+                        "step": "0.1",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a65f89e23920"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a6a008852182",
+        "title": "首页FAQ",
+        "fields": [
+            {
+                "key": "field_6a6a01345bba6",
+                "label": "FAQ 列表",
+                "name": "home_faq_items",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a6a015b5bba7",
+                        "label": "问题",
+                        "name": "question",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 0,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a6a01345bba6"
+                    },
+                    {
+                        "key": "field_6a6a01835bba8",
+                        "label": "答案",
+                        "name": "answer",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "allow_in_bindings": 0,
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0,
+                        "parent_repeater": "field_6a6a01345bba6"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "home-faq"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a1fbb462d6d1",
+        "title": "产品基础信息",
+        "fields": [
+            {
+                "key": "field_6a22b59b6c540",
+                "label": "产品名称",
+                "name": "product_name",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "NordVPN",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fbb46fc484",
+                "label": "产品 Logo",
+                "name": "product_logo",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "返回格式：图像 URL",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "allow_in_bindings": 1,
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_6a53a409c5019",
+                "label": "联盟链接前缀",
+                "name": "affiliate_prefix",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认visit，可自定义recommended、vpn\/surfshark等，防止被广告插件拦截",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "visit",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "visit",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fbee9f443a",
+                "label": "联盟链接",
+                "name": "affiliate_url",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "推广链接（带追踪）",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "placeholder": ""
+            },
+            {
+                "key": "field_6a1fbff1f443b",
+                "label": "产品简介",
+                "name": "product_summary",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "300字以内简短介绍",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": 300,
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fc049f443c",
+                "label": "编辑评语",
+                "name": "editor_verdict",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "一句话总结",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fc089f443d",
+                "label": "是否推荐",
+                "name": "is_recommended",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "显示「编辑推荐」徽章",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "将在前端该产品卡片上显示「编辑推荐」徽章",
+                "default_value": 0,
+                "allow_in_bindings": 1,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_6a1fc150f443e",
+                "label": "排名权重",
+                "name": "ranking_weight",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "数值越大排名越前，默认 0",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 0,
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a3520a213a16",
+                "label": "计费单位",
+                "name": "price_period",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认值直接填：\/mo，用于在价格后显示 \/mo 或 \/yr",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "\/mo",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "\/mo",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a35210013a17",
+                "label": "免责声明链接",
+                "name": "disclaimer_url",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "默认值直接填：\/disclaimer\/，用于 Hero 区域的小字跳转",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "https:\/\/cyberatlaslab.com\/disclaimer",
+                "allow_in_bindings": 1,
+                "placeholder": ""
+            },
+            {
+                "key": "field_6a28fd2774ed3",
+                "label": "相关评测大标题",
+                "name": "related_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认：Related Reviews，可自定义",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Related Reviews",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a28f6086babd",
+                "label": "相关评测推荐",
+                "name": "related_reviews",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "post",
+                    "page",
+                    "product"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "filters": [
+                    "search",
+                    "post_type",
+                    "taxonomy"
+                ],
+                "return_format": "id",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "elements": "",
+                "bidirectional": 0,
+                "bidirectional_target": []
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ]
+        ],
+        "menu_order": 10,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 1,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a1fd44dac61b",
+        "title": "功能参数",
+        "fields": [
+            {
+                "key": "field_6a4f466a72e8c",
+                "label": "产品类别",
+                "name": "product_category",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "勾选功能参数对应的产品分类",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "vpn": "VPN Proxy (VPN网络代理)",
+                    "security": "Antivirus & Security (杀毒与网络安全)",
+                    "password": "Password Manager (密码管理器)",
+                    "parental": "Parental Control (家长控制与守护)"
+                },
+                "default_value": false,
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "allow_in_bindings": 1,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_6a1fd44ed9e0e",
+                "label": "服务器数量",
+                "name": "server_count",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "如「5500」",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "vpn"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 2600,
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd4a7d9e0f",
+                "label": "覆盖国家数",
+                "name": "country_count",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "如「60」",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "vpn"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 20,
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd4e0d9e10",
+                "label": "同时支持设备数",
+                "name": "device_limit",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "如「6」或「无限制」",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 5,
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd51ad9e11",
+                "label": "PLATFORM",
+                "name": "supported_platforms",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "OS availability.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "windows": "Windows",
+                    "macos": "macOS",
+                    "ios": "iOS",
+                    "android": "Android",
+                    "linux": "Linux",
+                    "router": "Router",
+                    "smart_tv": "Smart TV",
+                    "browser_extension": "Browser Extension"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 1,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            },
+            {
+                "key": "field_6a1fd607d9e12",
+                "label": "PROTOCOLS",
+                "name": "supported_protocols",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "Tunneling methods.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "wireguard": "WireGuard",
+                    "openvpn": "OpenVPN",
+                    "ikev2": "IKEv2",
+                    "l2tp": "L2TP",
+                    "lightway": "Lightway (ExpressVPN)",
+                    "nordlynx": "NordLynx (NordVPN)",
+                    "tls_13": "TLS 1.3 (安全传输协议)",
+                    "local_only": "Local Offline (纯本地不联网)"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 1,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            },
+            {
+                "key": "field_6a1fd6afd9e13",
+                "label": "日志政策",
+                "name": "log_policy",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "no_log : 无日志（No-log）\r\nminimal : 最小日志（Minimal）\r\nfull_log : 有日志（Full）",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "no_log": "No-Logs Policy",
+                    "minimal": "Minimal Logs",
+                    "full_log": "Full Logs"
+                },
+                "default_value": false,
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "allow_in_bindings": 1,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_6a4f6ab312789",
+                "label": "恶意软件拦截率",
+                "name": "malware_detection_rate",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "security"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "99.8%",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd723d9e14",
+                "label": "总部位置",
+                "name": "headquarters",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "如「Panama」",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Panama",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd74ad9e15",
+                "label": "成立年份",
+                "name": "founded_year",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "如「2012」",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd7eed9e16",
+                "label": "FEATURES",
+                "name": "special_features",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "Advanced utilities.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "kill_switch": "Kill Switch (终止开关)",
+                    "split_tunneling": "Split Tunneling (分流隧道)",
+                    "double_vpn": "Double VPN (双重加密)",
+                    "obfuscation": "Obfuscation (流量混淆\/伪装)",
+                    "ad_blocker": "Ad Blocker (广告\/恶意软件拦截)",
+                    "dedicated_ip": "Dedicated IP (独享\/静态IP)",
+                    "p2p_support": "P2P Support (BT\/P2P下载优化)",
+                    "streaming_support": "Streaming Support (流媒体解锁优化)"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 1,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            },
+            {
+                "key": "field_6a3f62179b8c0",
+                "label": "SECURITY",
+                "name": "vpn_security_features",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "Encryption & infrastructure.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "vpn"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "aes_256": "AES-256 (军工级算法加密)",
+                    "cha_cha20": "ChaCha20 (现代流密码加密)",
+                    "ram_only": "RAM-only (纯内存无盘服务器)",
+                    "pfs": "Perfect Forward Secrecy (前向安全性)",
+                    "audit": "Independent Audit (独立第三方安全审计)",
+                    "dns_leak": "DNS Leak Protection (防泄漏保护)",
+                    "ipv6_leak": "IPv6 Leak Protection (防泄漏保护)",
+                    "quantum_safe": "Post-Quantum (后量子加密防线)",
+                    "onion_over_vpn": "Onion Over VPN (智能洋葱路由)"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 1,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            },
+            {
+                "key": "field_6a3f63edea488",
+                "label": "SECURITY",
+                "name": "antivirus_security_features",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "Encryption & infrastructure.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "security"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "realtime_protection": "Real-Time Scanning (实时行为监控防护)",
+                    "heurisitic_analysis": "Heuristic Analysis (启发式恶意软件分析)",
+                    "ransomware_shield": "Ransomware Protection (勒索软件精准拦截)",
+                    "firewall_integrated": "Advanced Firewall (高级双向内置防火墙)",
+                    "phishing_protection": "Anti-Phishing Shield (网页反钓鱼反欺诈)",
+                    "sandbox_env": "Sandboxing Environment (沙盒隔离运行测试)",
+                    "zero_day_defense": "Zero-Day Exploit (零日漏洞主动防御)",
+                    "webcam_protection": "Webcam & Mic (摄像头与麦克风防窥)"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 1,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            },
+            {
+                "key": "field_6a3f655d0925f",
+                "label": "SECURITY",
+                "name": "parental_security_features",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "Encryption & infrastructure.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "parental"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "screen_time": "Screen Time Management (屏幕使用时间限制)",
+                    "app_blocking": "App & Game Blocker (应用程序与游戏阻断)",
+                    "web_filtering": "Web Content Filtering (网页内容分类黑名单)",
+                    "gps_tracking": "Real-time GPS Tracking (实时精准位置追踪)",
+                    "geofencing": "Geofencing Alerts (地理围栏进出自动警报)",
+                    "social_monitor": "Social Media Monitoring (社交媒体与聊天审计)",
+                    "call_sms_log": "Call & SMS Logging (通话与短信收发记录)",
+                    "panic_button": "SOS Panic Button (紧急情况一键求助)"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 1,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            },
+            {
+                "key": "field_6a3f658d09260",
+                "label": "SECURITY",
+                "name": "password_security_features",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "Encryption & infrastructure.",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "password"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "zero_knowledge": "Zero-Knowledge Architecture (零知识加密架构)",
+                    "two_factor_auth": "2FA \/ MFA Support (多因素身份认证)",
+                    "biometric_unlock": "Biometric Login (生物识别\/面容\/指纹解锁)",
+                    "passkey_support": "Passkey Integration (通行密钥原生支持)",
+                    "breach_watch": "Dark Web Monitoring (暗网凭据泄露监控)",
+                    "password_audit": "Password Strength Auditor (保险箱强度审计)",
+                    "secure_sharing": "Encrypted Vault Sharing (端到端加密安全共享)",
+                    "emergency_access": "Emergency Access (紧急联系人托管与继承)"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 1,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            },
+            {
+                "key": "field_6a4f6b331278a",
+                "label": "加密架构",
+                "name": "encryption_architecture",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "1️⃣ 行业黄金标准（如 1Password, Bitwarden, Dashlane）：\r\nZero-Knowledge\r\n(零知识架构。数据在本地加密后上传，服务商无密钥，无法窥探用户数据)\r\n\r\n2️⃣ 军工级算法流（如 NordPass, KeePass 等强调具体算法的产品）：\r\nXChaCha20-Poly1305\r\n或填入：AES-256 Bit\r\n\r\n3️⃣ 极高防御双保险（如 1Password 这种带本地物理密钥的产品）：\r\nZero-Knowledge + Secret Key\r\n\r\n4️⃣ 传统云同步（无零知识保护的普通云端托管加密）：\r\nStandard Cloud-Sync",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "password"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Zero-Knowledge",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Zero-Knowledge",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a4f6bcd1278b",
+                "label": "保管库类型",
+                "name": "vault_types",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "password"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "personal": "Personal Vault (个人保管库)",
+                    "private": "Private Vault (私密保险箱)",
+                    "shared": "Shared Folder (加密共享文件夹)",
+                    "family": "Family Vault (家庭共享保险箱)",
+                    "business": "Business Vault (企业\/团队团队库)"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 0,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            },
+            {
+                "key": "field_6a4f6c7e1278c",
+                "label": "核心覆盖\/守护范围",
+                "name": "monitoring_coverage",
+                "aria-label": "",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6a4f466a72e8c",
+                            "operator": "==",
+                            "value": "parental"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "screen_time": "Screen Time (屏幕使用时间限制)",
+                    "web_filter": "Web Filtering (网页内容过滤)",
+                    "gps_location": "GPS Tracking (GPS实时位置追踪)",
+                    "app_block": "App Blocker (应用与游戏阻断)"
+                },
+                "default_value": [],
+                "return_format": "value",
+                "allow_custom": 0,
+                "allow_in_bindings": 1,
+                "layout": "horizontal",
+                "toggle": 0,
+                "save_custom": 0,
+                "custom_choice_button_text": "添加新选择"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ]
+        ],
+        "menu_order": 20,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 1,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a58557e42f59",
+        "title": "CTA营销",
+        "fields": [
+            {
+                "key": "field_6a585862f0071",
+                "label": "CTA-S 顶部标签",
+                "name": "cta_s_label",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "用于展示在S版左侧的特色标签。例如：Better Alternative 或 Top Value Choice",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Better Alternative",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Better Alternative",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a586748f0072",
+                "label": "CTA-S 核心优惠文案",
+                "name": "cta_s_offer",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "用于紧跟在产品名称后面的短营销语。针对当前文章的主题编写。例如：is highly recommended for its exceptional streaming performance.",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "is highly recommended for its exceptional streaming performance.",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "is highly recommended for its exceptional streaming performance.",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a586784f0073",
+                "label": "CTA-S 按钮文案",
+                "name": "cta_s_btn",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "动作按钮上的文字。例如：Check Latest Deal 或 Get Deal Now。",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Check Latest Deal",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Check Latest Deal",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a5867ccf0074",
+                "label": "CTA-M 顶部标签",
+                "name": "cta_m_label",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "展示在M版左上角的视觉标签。例如：Editor's Pick 或 Best Budget VPN。",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Editor's Pick",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Editor's Pick",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a586b58f0076",
+                "label": "CTA-M 按钮文案",
+                "name": "cta_m_btn",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "主动作按钮文字。例如：Claim Deal 或 Get Surfshark。",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Claim Deal",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Claim Deal",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a586b96f0077",
+                "label": "CTA-L 顶部标签",
+                "name": "cta_l_label",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "展示在L版左上角的终极结论标签。例如：Final Verdict: Highly Recommended 或 Best for Torrenting。",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Final Verdict: Highly Recommended",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Final Verdict: Highly Recommended",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a5871f4f007f",
+                "label": "CTA-L 按钮文案",
+                "name": "cta_l_btn",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "大动作按钮文字。例如：Get Protected Today 或 Secure Your Devices。",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Get Protected Today",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Get Protected Today",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a587236f0080",
+                "label": "CTA-L 信任印章矩阵",
+                "name": "cta_trust_items",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a587272f0081",
+                        "label": "CRS 团队背书",
+                        "name": "trust_team",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "示例：Tested & Approved by CRS Team\r\n说明：强调 CRS 团队的亲身实测与权威认证。",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Tested & Approved by CRS Team",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "Tested & Approved by CRS Team",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a587236f0080"
+                    },
+                    {
+                        "key": "field_6a58748ff0082",
+                        "label": "优惠时效验证",
+                        "name": "trust_time",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "示例：Active Offer: Verified Today (July 2026)\r\n说明：证明优惠当前绝对有效，打消过期顾虑。",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Active Offer: Verified Today (July 2026)",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "Active Offer: Verified Today (July 2026)",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a587236f0080"
+                    },
+                    {
+                        "key": "field_6a5874eff0083",
+                        "label": "退款\/风险承诺",
+                        "name": "trust_refund",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "示例：30-Day Money-Back Guarantee (100% Risk-Free)",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "30-Day Money-Back Guarantee (100% Risk-Free)",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "30-Day Money-Back Guarantee (100% Risk-Free)",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a587236f0080"
+                    },
+                    {
+                        "key": "field_6a587527f0084",
+                        "label": "技术安全\/上手特质",
+                        "name": "trust_feature",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "示例：No Credit Card Risk & Instant Setup\r\n说明：根据产品不同定制。VPN 写隐私，密码管理器写零知识架构，云备份写无限设备。",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "No Credit Card Risk & Instant Setup",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "No Credit Card Risk & Instant Setup",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a587236f0080"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 30,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 1,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a1fd108787a4",
+        "title": "价格与优惠",
+        "fields": [
+            {
+                "key": "field_6a1fd109c482c",
+                "label": "货币符号",
+                "name": "currency_symbol",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "USD": "$ (美元)",
+                    "EUR": "€ (欧元)",
+                    "GBP": "£ (英镑)",
+                    "JPY": "¥ (日元)",
+                    "CNY": "¥ (人民币)",
+                    "CAD": "CA$ (加元)",
+                    "AUD": "AU$ (澳元)"
+                },
+                "default_value": "USD",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "allow_in_bindings": 1,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_6a1fd2af1b4df",
+                "label": "月付价格",
+                "name": "price_monthly",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "step": "0.01",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd2d41b4e0",
+                "label": "年付价格（月均）",
+                "name": "price_yearly",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "年付套餐折算月价",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd3151b4e1",
+                "label": "最低价格",
+                "name": "price_lowest",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "如6.65，多年套餐最低月均价",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "6.65",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "placeholder": "6.65",
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd33a1b4e2",
+                "label": "当前折扣",
+                "name": "current_discount",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "如：Save 69% + 3 Months Free",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Save 69% + 3 Months Free",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Save 69% + 3 Months Free",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd37d1b4e3",
+                "label": "计费详情",
+                "name": "billing_details",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "示例： Billed every 28 months（Surfshark 经典周期）\r\n示例： Billed USD 89.10 for the first 2 years（NordVPN 经典总额提示）\r\n示例： Billed annually after 1-year trial（年付 SaaS\/主机产品）",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Billed every 28 months",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Billed every 28 months",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd3971b4e4",
+                "label": "免费试用",
+                "name": "free_trial_days",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "免费试用天数，0 = 无",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 30,
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "placeholder": 30,
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd3e31b4e5",
+                "label": "退款保证",
+                "name": "refund_days",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "退款保证天数",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": 30,
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "placeholder": 30,
+                "step": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd4031b4e6",
+                "label": "免费版本",
+                "name": "has_free_plan",
+                "aria-label": "",
+                "type": "true_false",
+                "instructions": "是否有免费套餐",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "allow_in_bindings": 1,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_6a3d0757c2d80",
+                "label": "CAT关联产品",
+                "name": "associated_products",
+                "aria-label": "",
+                "type": "relationship",
+                "instructions": "测评文章中CAT插入选择",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "product",
+                    "post"
+                ],
+                "post_status": "",
+                "taxonomy": "",
+                "filters": [
+                    "search"
+                ],
+                "return_format": "id",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "elements": "",
+                "bidirectional": 0,
+                "bidirectional_target": []
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ]
+        ],
+        "menu_order": 40,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 1,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a1fd86dbbbb8",
+        "title": "优缺点",
+        "fields": [
+            {
+                "key": "field_6a27f3064238a",
+                "label": "优点大标题",
+                "name": "pros_title_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认填写PROS，可以自定义名称",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "PROS",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "pros",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fd86e6a20e",
+                "label": "优点列表",
+                "name": "pros",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_6a1fda386a210",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a1fda386a210",
+                        "label": "优点",
+                        "name": "pro_item",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a1fd86e6a20e"
+                    }
+                ]
+            },
+            {
+                "key": "field_6a27f3734238b",
+                "label": "缺点大标题",
+                "name": "cons_title_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认填写CONS，可自定义值",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "CONS",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "CONS",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1fda826a211",
+                "label": "缺点列表",
+                "name": "cons",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_6a1fda906a212",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a1fda906a212",
+                        "label": "缺点",
+                        "name": "con_item",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a1fda826a211"
+                    }
+                ]
+            },
+            {
+                "key": "field_6a27f3d94238c",
+                "label": "适合人群标题",
+                "name": "best_title_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认值Best For，可自定义",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Best For",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Best For",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a23c1f8fabe4",
+                "label": "适合人群",
+                "name": "best",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "field_6a23c2c3fabe5",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a23c2c3fabe5",
+                        "label": "具体人群",
+                        "name": "best_item",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a23c1f8fabe4"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ]
+        ],
+        "menu_order": 60,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 1,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a2532146b2b3",
+        "title": "亮点总结",
+        "fields": [
+            {
+                "key": "field_6a28110a901fb",
+                "label": "功能亮点标题",
+                "name": "takeaway_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认：Key Takeaways，可自定义",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Key Takeaways",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Key Takeaways",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a25321503212",
+                "label": "产品亮点摘要",
+                "name": "takeaways",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a2533f603213",
+                        "label": "对应图标",
+                        "name": "takeaway_icon",
+                        "aria-label": "",
+                        "type": "select",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "choices": {
+                            "servers": "🖥️ Servers (服务器数量)",
+                            "countries": "🌍 Countries (覆盖国家)",
+                            "speed": "⚡ Speed & Performance (速度与性能)",
+                            "dedicated_ip": "🎯 Dedicated IP (专用静态IP)",
+                            "shield": "🛡️ Security & Privacy (安全与隐私)",
+                            "encryption": "🔐 Military Encryption (高强度加密)",
+                            "protocol": "📡 Advanced Protocols (加密协议)",
+                            "nologs": "📄 No-Logs Policy (无日志政策)",
+                            "audit": "✅ Independently Audited (独立审计)",
+                            "e2ee": "🔒 End-to-End Encryption (端到端加密)",
+                            "opensource": "💻 100% Open Source (开源透明)",
+                            "killswitch": "🔌 Automatic Kill Switch (断网保护)",
+                            "multihop": "🔄 Multi-Hop \/ Double VPN (多跳双网)",
+                            "split": "🔀 Split Tunneling (分流隧道)",
+                            "stealth": "🥷 Obfuscated \/ Stealth (流量混淆)",
+                            "streaming": "📺 Streaming Unlocked (流媒体解锁)",
+                            "torrenting": "⬇️ P2P & Torrenting (文件下载)",
+                            "adblock": "🛑 Built-in Ad Blocker (广告拦截)",
+                            "firewall": "🧱 Built-in Firewall (内置防火墙)",
+                            "password": "🔑 Password Manager (密码管理)",
+                            "twofa": "🔢 Two-Factor Auth (双重认证)",
+                            "autofill": "📝 Auto-Fill & Form Capture (自动填充)",
+                            "breach": "🔍 Dark Web \/ Breach Monitor (泄露监控)",
+                            "malware": "🦠 Malware Protection (恶意软件拦截)",
+                            "ransomware": "🚨 Ransomware Protection (勒索防护)",
+                            "cloud": "☁️ Cloud Storage (云存储备份)",
+                            "devices": "📱 Multi-Device Support (设备数量)",
+                            "support": "💬 24\/7 Live Support (客服支持)",
+                            "moneyback": "💰 Money-Back Guarantee (退款保证)",
+                            "free_tier": "🆓 Free Tier Available (免费版)",
+                            "price": "🏷️ Best Value (价格优势)",
+                            "check": "✓ General Check (通用勾选点)"
+                        },
+                        "default_value": false,
+                        "return_format": "value",
+                        "multiple": 0,
+                        "allow_null": 1,
+                        "allow_in_bindings": 1,
+                        "ui": 0,
+                        "ajax": 0,
+                        "placeholder": "",
+                        "create_options": 0,
+                        "save_options": 0,
+                        "parent_repeater": "field_6a25321503212"
+                    },
+                    {
+                        "key": "field_6a25345f03214",
+                        "label": "功能描述",
+                        "name": "takeaway_text",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a25321503212"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ]
+        ],
+        "menu_order": 70,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a5f47d703a9b",
+        "title": "文章CTA营销数据",
+        "fields": [
+            {
+                "key": "field_6a586d50f0078",
+                "label": "产品名称",
+                "name": "cta_local_name",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Surfshark",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Surfshark",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a586f01f007b",
+                "label": "最低价格",
+                "name": "cta_local_price",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "例如：6.39",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "6.39",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a586f9cf007c",
+                "label": "计费单位",
+                "name": "cta_local_price_period",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "计费单位，默认 \/mo \/yr",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "\/mo",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "\/mo",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a58557ef006f",
+                "label": "综合评分",
+                "name": "cta_local_score",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "例如9.8",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "9.6",
+                "min": "",
+                "max": "",
+                "allow_in_bindings": 1,
+                "placeholder": "9.8",
+                "step": "0.1",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a586e26f007a",
+                "label": "计费详情",
+                "name": "cta_local_discount",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "示例： Billed every 28 months（Surfshark 经典周期）\r\n示例： Billed USD 89.10 for the first 2 years（NordVPN 经典总额提示）\r\n示例： Billed annually after 1-year trial（年付 SaaS\/主机产品）",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Billed USD 89.10 for the first 2 years",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Billed USD 89.10 for the first 2 years",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a586deef0079",
+                "label": "当前折扣",
+                "name": "cta_local_discount",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "如：Save 69% + 3 Months Free",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Save 69% + 3 Months Free",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "Save 69% + 3 Months Free",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a5870c9f007d",
+                "label": "联盟链接前缀",
+                "name": "affiliate_prefix",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a5870eef007e",
+                "label": "联盟链接",
+                "name": "affiliate_url",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "allow_in_bindings": 0,
+                "placeholder": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 80,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a241f43bea37",
+        "title": "分类\/详情 FAQ",
+        "fields": [
+            {
+                "key": "field_6a281bbdad946",
+                "label": "FAQ大标题",
+                "name": "faq_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "默认：Frequently Asked Questions，可自定义",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Frequently Asked Questions",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a241f447f47a",
+                "label": "常见问题",
+                "name": "faq_list",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "row",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "添加行",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a241f8b7f47b",
+                        "label": "问题",
+                        "name": "faq_question",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "allow_in_bindings": 1,
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a241f447f47a"
+                    },
+                    {
+                        "key": "field_6a2421157f47c",
+                        "label": "答案",
+                        "name": "faq_answer",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "allow_in_bindings": 1,
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0,
+                        "parent_repeater": "field_6a241f447f47a"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "product"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ]
+        ],
+        "menu_order": 90,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 1,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "group_6a01a289bb269",
+        "title": "联盟营销倒计时",
+        "fields": [
+            {
+                "key": "field_6a01a314d6364",
+                "label": "Date Picker",
+                "name": "offer_end_date",
+                "aria-label": "",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "Y-m-d",
+                "return_format": "Y-m-d",
+                "first_day": 1,
+                "default_to_current_date": 0,
+                "allow_in_bindings": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_type",
+                    "operator": "==",
+                    "value": "front_page"
+                }
+            ]
+        ],
+        "menu_order": 100,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 1,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    },
+    {
+        "key": "ui_options_page_6a670bf2b0b7b",
+        "title": "评分解释",
+        "active": true,
+        "menu_order": 0,
+        "page_title": "评分解释",
+        "menu_slug": "site-options",
+        "parent_slug": "none",
+        "advanced_configuration": 1,
+        "icon_url": "",
+        "menu_title": "",
+        "position": "",
+        "redirect": 0,
+        "description": "",
+        "menu_icon": {
+            "type": "dashicons",
+            "value": "dashicons-chart-pie"
+        },
+        "update_button": "更新",
+        "updated_message": "选项已更新",
+        "capability": "edit_posts",
+        "data_storage": "options",
+        "post_id": "",
+        "autoload": 0
+    },
+    {
+        "key": "ui_options_page_6a6a006394fa5",
+        "title": "首页FAQ",
+        "active": true,
+        "menu_order": 0,
+        "page_title": "首页FAQ",
+        "menu_slug": "home-faq",
+        "parent_slug": "none",
+        "advanced_configuration": 1,
+        "icon_url": "",
+        "menu_title": "",
+        "position": "",
+        "redirect": 0,
+        "description": "",
+        "menu_icon": {
+            "type": "dashicons",
+            "value": "dashicons-info"
+        },
+        "update_button": "更新",
+        "updated_message": "选项已更新",
+        "capability": "edit_posts",
+        "data_storage": "options",
+        "post_id": "",
+        "autoload": 0
+    }
+]
