@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best VPN Services 2025 — CyberAtlasLab | Prototype</title>
+  <style>
+    /* 本地字体加载 - 双路径防丢 */
+    @font-face {
+      font-family: 'Inter';
+      src: url('../fonts/InterVariable.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  <link rel="stylesheet" href="category-best-x.css">
+</head>
+<body class="cal-proto-body">
+
+  <!-- ===================================================================
+       DEV: 版本切换控件（仅本地预览用，WordPress 整合时移除）
+       =================================================================== -->
+  <div class="cal-dev-switcher" id="cal-dev-switcher" role="region" aria-label="版本切换（仅开发预览）">
+    <span class="cal-dev-switcher__label">DEV · 文案版本</span>
+    <div class="cal-dev-switcher__btns">
+      <button class="cal-dev-switcher__btn is-active" data-version="version-a">A · 标准版</button>
+      <button class="cal-dev-switcher__btn" data-version="version-b">B · 移动端短文案</button>
+      <button class="cal-dev-switcher__btn" data-version="version-c">C · 桌面端长文案</button>
+    </div>
+    <button class="cal-dev-switcher__toggle" id="cal-dev-toggle" title="隐藏/显示工具栏">✕</button>
+  </div>
+
+  <!-- ===================================================================
+       HEADER（静态模拟 - WordPress 整合时替换为 Astra/Elementor Header）
+       =================================================================== -->
+  <header class="cal-header" id="cal-header" role="banner">
+    <div class="cal-header__inner">
+      <!-- Logo -->
+      <a href="#" class="cal-header__logo" aria-label="CyberAtlasLab 首页">
+        <div class="cal-header__logo-mark">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect width="28" height="28" rx="6" fill="#2563EB"/>
+            <path d="M7 14L11.5 18.5L21 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="cal-header__logo-text">CyberAtlasLab</span>
+      </a>
+      <!-- 桌面端导航 -->
+      <nav class="cal-header__nav" aria-label="主导航">
+        <ul class="cal-header__nav-list">
+          <li><a href="#" class="cal-header__nav-link">VPN</a></li>
+          <li><a href="#" class="cal-header__nav-link">Password Managers</a></li>
+          <li><a href="#" class="cal-header__nav-link">Antivirus</a></li>
+          <li class="cal-header__nav-item--more"><a href="#" class="cal-header__nav-link">More <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+        </ul>
+      </nav>
+      <!-- CTA 区域 -->
+      <div class="cal-header__actions">
+        <a href="#" class="cal-header__search" aria-label="搜索">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M13 13L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" class="cal-btn cal-btn--primary cal-header__cta">Start Free Trial</a>
+        <!-- 移动端菜单按钮 -->
+        <button class="cal-header__hamburger" id="cal-hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="cal-mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- 移动端菜单面板 -->
+    <nav class="cal-mobile-menu" id="cal-mobile-menu" aria-hidden="true" aria-label="移动端导航">
+      <ul class="cal-mobile-menu__list">
+        <li><a href="#" class="cal-mobile-menu__link">VPN</a></li>
+        <li><a href="#" class="cal-mobile-menu__link">Password Managers</a></li>
+        <li><a href="#" class="cal-mobile-menu__link">Antivirus</a></li>
+        <li><a href="#" class="cal-mobile-menu__link">Firewall</a></li>
+        <li><a href="#" class="cal-mobile-menu__link">Identity Protection</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===================================================================
+       主体内容区域
+       =================================================================== -->
+  <main id="cal-main" class="cal-main">
+
+    <!-- -----------------------------------------------------------------
+         BREADCRUMB（WordPress 整合时替换为 Astra/Elementor 面包屑组件）
+         ----------------------------------------------------------------- -->
+    <nav class="cal-breadcrumb" aria-label="面包屑导航">
+      <div class="cal-container">
+        <ol class="cal-breadcrumb__list">
+          <li class="cal-breadcrumb__item">
+            <a href="#" class="cal-breadcrumb__link">Home</a>
+          </li>
+          <li class="cal-breadcrumb__item" aria-hidden="true">
+            <span class="cal-breadcrumb__sep">/</span>
+          </li>
+          <li class="cal-breadcrumb__item">
+            <a href="#" class="cal-breadcrumb__link">Categories</a>
+          </li>
+          <li class="cal-breadcrumb__item" aria-hidden="true">
+            <span class="cal-breadcrumb__sep">/</span>
+          </li>
+          <li class="cal-breadcrumb__item cal-breadcrumb__item--current" aria-current="page">
+            <span class="cal-breadcrumb__current" data-cal-content="breadcrumb-current">VPN</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 1: CATEGORY HERO
+         ----------------------------------------------------------------- -->
+    <section class="cal-category-hero" id="cal-section-hero" aria-labelledby="cal-hero-h1">
+      <div class="cal-container">
+        <div class="cal-category-hero__inner">
+
+          <!-- 标签 Badge -->
+          <div class="cal-category-hero__badge-wrap">
+            <span class="cal-badge cal-badge--primary cal-category-hero__badge" data-cal-content="hero-badge">VPN 评测</span>
+          </div>
+
+          <!-- H1 -->
+          <h1 class="cal-category-hero__h1" id="cal-hero-h1" data-cal-content="hero-h1">
+            Best VPN Services 2025
+          </h1>
+
+          <!-- 简介 -->
+          <p class="cal-category-hero__intro" data-cal-content="hero-intro">
+            Our security experts have tested over 30 VPN services using our 47-point evaluation framework. Here are the top picks for speed, privacy, and value.
+          </p>
+
+          <!-- 信任信号 -->
+          <ul class="cal-category-hero__trust" aria-label="评测信任信号" data-cal-content="hero-trust">
+            <!-- 由 JS 渲染 -->
+          </ul>
+
+          <!-- 快速筛选 -->
+          <div class="cal-category-hero__filters" role="group" aria-label="产品筛选">
+            <span class="cal-category-hero__filters-label">Filter by:</span>
+            <div class="cal-category-hero__filter-list" data-cal-content="hero-filters">
+              <!-- 由 JS 渲染 -->
+            </div>
+          </div>
+
+          <!-- 元信息 -->
+          <div class="cal-category-hero__meta">
+            <span class="cal-category-hero__meta-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M7 4v3.5l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Updated August 2025
+            </span>
+            <span class="cal-category-hero__meta-sep" aria-hidden="true">·</span>
+            <span class="cal-category-hero__meta-item">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1l1.5 4.5H13l-3.75 2.7 1.5 4.55L7 10.5 3.25 12.75l1.5-4.55L1 5.5h4.5L7 1z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              By the CyberAtlasLab Research Team
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 2: STICKY ANCHOR NAV
+         （WordPress 整合时可使用 Elementor Sticky 功能或自定义 PHP）
+         ----------------------------------------------------------------- -->
+    <nav class="cal-anchor-nav" id="cal-anchor-nav" aria-label="页面内导航" data-sticky-offset="0">
+      <div class="cal-container">
+        <div class="cal-anchor-nav__inner">
+          <ul class="cal-anchor-nav__list" role="list">
+            <li class="cal-anchor-nav__item">
+              <a href="#cal-section-picks" class="cal-anchor-nav__link is-active" data-target="cal-section-picks">Top Picks</a>
+            </li>
+            <li class="cal-anchor-nav__item">
+              <a href="#cal-section-comparison" class="cal-anchor-nav__link" data-target="cal-section-comparison">Comparison</a>
+            </li>
+            <li class="cal-anchor-nav__item">
+              <a href="#cal-section-how-we-test" class="cal-anchor-nav__link" data-target="cal-section-how-we-test">Methodology</a>
+            </li>
+            <li class="cal-anchor-nav__item">
+              <a href="#cal-section-guide" class="cal-anchor-nav__link" data-target="cal-section-guide">Guide</a>
+            </li>
+            <li class="cal-anchor-nav__item">
+              <a href="#cal-section-faq" class="cal-anchor-nav__link" data-target="cal-section-faq">FAQ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 3: HOW WE TEST & RANK
+         （可折叠区域）
+         ----------------------------------------------------------------- -->
+    <section class="cal-how-we-test" id="cal-section-how-we-test" aria-labelledby="cal-howwetest-h2">
+      <div class="cal-container">
+        <div class="cal-how-we-test__card">
+          <!-- 折叠触发器 -->
+          <button
+            class="cal-how-we-test__trigger"
+            id="cal-howwetest-trigger"
+            aria-expanded="false"
+            aria-controls="cal-howwetest-body"
+          >
+            <div class="cal-how-we-test__trigger-left">
+              <div class="cal-how-we-test__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 7v11h14V7L10 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M7 18v-6h6v6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h2 class="cal-how-we-test__h2" id="cal-howwetest-h2" data-cal-content="howwetest-title">How We Test &amp; Rank VPN Services</h2>
+                <p class="cal-how-we-test__trigger-sub" data-cal-content="howwetest-intro">Independent methodology for unbiased results.</p>
+              </div>
+            </div>
+            <div class="cal-how-we-test__trigger-right">
+              <span class="cal-how-we-test__trigger-cta">See Our Methodology</span>
+              <svg class="cal-how-we-test__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </button>
+          <!-- 折叠内容 -->
+          <div class="cal-how-we-test__body" id="cal-howwetest-body" role="region" aria-hidden="true">
+            <div class="cal-how-we-test__body-inner">
+              <div class="cal-how-we-test__grid" data-cal-content="howwetest-items">
+                <!-- 由 JS 渲染 -->
+              </div>
+              <div class="cal-how-we-test__footer">
+                <a href="#" class="cal-btn cal-btn--outline cal-btn--sm">Read Full Methodology →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 4: QUICK COMPARISON
+         桌面端：极简对比表 | 移动端：横向滑动卡片
+         ----------------------------------------------------------------- -->
+    <section class="cal-quick-comparison" id="cal-section-comparison" aria-labelledby="cal-comparison-h2">
+      <div class="cal-container">
+        <div class="cal-section-header">
+          <h2 class="cal-section-header__h2" id="cal-comparison-h2" data-cal-content="comparison-title">Quick Comparison</h2>
+          <p class="cal-section-header__sub" data-cal-content="comparison-subtitle">Top 5 VPN Services at a Glance</p>
+        </div>
+
+        <!-- 桌面端：表格 -->
+        <div class="cal-comparison-table-wrap cal-hide-mobile" role="region" aria-label="产品对比表">
+          <table class="cal-comparison-table" id="cal-comparison-table">
+            <thead>
+              <tr>
+                <th class="cal-comparison-table__th cal-comparison-table__th--rank">Rank</th>
+                <th class="cal-comparison-table__th cal-comparison-table__th--product">Product</th>
+                <th class="cal-comparison-table__th">Score</th>
+                <th class="cal-comparison-table__th">Price</th>
+                <th class="cal-comparison-table__th">Best For</th>
+                <th class="cal-comparison-table__th cal-comparison-table__th--cta"></th>
+              </tr>
+            </thead>
+            <tbody id="cal-comparison-tbody">
+              <!-- 由 JS 渲染 -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 移动端：横向滑动卡片 -->
+        <div class="cal-comparison-cards-wrap cal-show-mobile-only" role="region" aria-label="产品对比卡片（横向滚动）">
+          <div class="cal-comparison-cards" id="cal-comparison-cards" tabindex="0" aria-label="可横向滑动查看更多">
+            <!-- 由 JS 渲染 -->
+          </div>
+          <div class="cal-comparison-cards__hint" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 5l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Swipe to see more
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 5: EDITOR'S PICKS
+         #1 大卡片 / #2-3 中型卡片 / #4-5 小卡片
+         ----------------------------------------------------------------- -->
+    <section class="cal-editors-picks" id="cal-section-picks" aria-labelledby="cal-picks-h2">
+      <div class="cal-container">
+        <div class="cal-section-header">
+          <h2 class="cal-section-header__h2" id="cal-picks-h2" data-cal-content="picks-title">Editor's Picks</h2>
+          <p class="cal-section-header__sub" data-cal-content="picks-subtitle">Our top-rated VPN services for 2025</p>
+        </div>
+
+        <!-- #1 大卡片 -->
+        <div id="cal-picks-featured" class="cal-picks-featured">
+          <!-- 由 JS 渲染 -->
+        </div>
+
+        <!-- #2–3 中型卡片 -->
+        <div id="cal-picks-mid" class="cal-picks-mid">
+          <!-- 由 JS 渲染 -->
+        </div>
+
+        <!-- #4–5 小卡片（可折叠区域） -->
+        <div class="cal-picks-minor-wrap">
+          <button
+            class="cal-picks-minor-trigger"
+            id="cal-picks-minor-trigger"
+            aria-expanded="false"
+            aria-controls="cal-picks-minor"
+          >
+            <span class="cal-picks-minor-trigger__text">Show More Products (#4–5)</span>
+            <svg class="cal-picks-minor-trigger__chevron" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4.5 6.75L9 11.25L13.5 6.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="cal-picks-minor" id="cal-picks-minor" aria-hidden="true">
+            <div class="cal-picks-minor__inner" id="cal-picks-minor-inner">
+              <!-- 由 JS 渲染 -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 6: BUYING GUIDE
+         ----------------------------------------------------------------- -->
+    <section class="cal-buying-guide" id="cal-section-guide" aria-labelledby="cal-guide-h2">
+      <div class="cal-container">
+        <div class="cal-buying-guide__layout">
+          <div class="cal-buying-guide__content">
+            <h2 class="cal-section-header__h2" id="cal-guide-h2" data-cal-content="guide-title">Buying Guide</h2>
+            <p class="cal-section-header__sub" data-cal-content="guide-subtitle">How to Choose the Right VPN</p>
+            <p class="cal-buying-guide__intro" data-cal-content="guide-intro">Not all VPNs are created equal. Here's what to look for when choosing a VPN service.</p>
+
+            <div class="cal-buying-guide__items">
+              <!-- 购买指南条目 -->
+              <div class="cal-buying-guide__item">
+                <div class="cal-buying-guide__item-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <h3 class="cal-buying-guide__item-title">Encryption & Protocol</h3>
+                  <p class="cal-buying-guide__item-desc">Look for AES-256 encryption and modern protocols like WireGuard or OpenVPN. Avoid PPTP and older protocols.</p>
+                </div>
+              </div>
+              <div class="cal-buying-guide__item">
+                <div class="cal-buying-guide__item-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2l2 6h6l-5 3.5 2 6L10 14l-5 3.5 2-6L2 8h6l2-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                  <h3 class="cal-buying-guide__item-title">No-Logs Policy</h3>
+                  <p class="cal-buying-guide__item-desc">A verified no-logs policy means the provider doesn't store your browsing activity. Look for independent audits.</p>
+                </div>
+              </div>
+              <div class="cal-buying-guide__item">
+                <div class="cal-buying-guide__item-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10a7 7 0 1014 0A7 7 0 003 10z" stroke="currentColor" stroke-width="1.5"/><path d="M10 10v-4M10 14v-.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <div>
+                  <h3 class="cal-buying-guide__item-title">Server Network</h3>
+                  <p class="cal-buying-guide__item-desc">More servers in more locations means better performance and more flexibility for geo-unblocking.</p>
+                </div>
+              </div>
+              <div class="cal-buying-guide__item">
+                <div class="cal-buying-guide__item-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 5V4a1 1 0 011-1h4a1 1 0 011 1v1" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <div>
+                  <h3 class="cal-buying-guide__item-title">Device Compatibility</h3>
+                  <p class="cal-buying-guide__item-desc">Ensure the VPN supports all your devices — Windows, macOS, iOS, Android, and ideally router-level support.</p>
+                </div>
+              </div>
+              <div class="cal-buying-guide__item">
+                <div class="cal-buying-guide__item-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z" stroke="currentColor" stroke-width="1.5"/><path d="M2 10h16M10 2a14 14 0 000 16M10 2a14 14 0 010 16" stroke="currentColor" stroke-width="1.5"/></svg>
+                </div>
+                <div>
+                  <h3 class="cal-buying-guide__item-title">Price & Value</h3>
+                  <p class="cal-buying-guide__item-desc">Balance cost with features. Long-term plans offer the best value, but always check the refund policy first.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 侧边推荐卡（桌面端） -->
+          <aside class="cal-buying-guide__sidebar" aria-label="推荐产品">
+            <div class="cal-buying-guide__sidebar-card">
+              <div class="cal-buying-guide__sidebar-header">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1l2 5.5h5.5l-4.5 3.2 1.8 5.5L9 12.2 4.2 15.2 6 9.7 1.5 6.5H7L9 1z" fill="#F59E0B"/></svg>
+                <span>Our #1 Pick</span>
+              </div>
+              <div class="cal-buying-guide__sidebar-product" id="cal-guide-sidebar-product">
+                <!-- 由 JS 渲染 -->
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 7: COMPARISON FACTORS
+         ----------------------------------------------------------------- -->
+    <section class="cal-comparison-factors" id="cal-section-factors" aria-labelledby="cal-factors-h2">
+      <div class="cal-container">
+        <div class="cal-section-header cal-section-header--center">
+          <h2 class="cal-section-header__h2" id="cal-factors-h2">What We Compare</h2>
+          <p class="cal-section-header__sub">The key factors in our VPN evaluation framework</p>
+        </div>
+        <div class="cal-factors-grid">
+          <div class="cal-factor-card">
+            <div class="cal-factor-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="cal-factor-card__title">Speed Performance</h3>
+            <p class="cal-factor-card__desc">Download/upload speed, latency across global servers, and VPN overhead impact.</p>
+            <div class="cal-factor-card__weight">
+              <span class="cal-factor-card__weight-label">Weight in score</span>
+              <span class="cal-factor-card__weight-val">25%</span>
+              <div class="cal-factor-card__bar-track"><div class="cal-factor-card__bar" style="width:25%"></div></div>
+            </div>
+          </div>
+          <div class="cal-factor-card">
+            <div class="cal-factor-card__icon cal-factor-card__icon--success" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5.5 3.5 10.7 8 12 4.5-1.3 8-6.5 8-12V6L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="cal-factor-card__title">Security & Privacy</h3>
+            <p class="cal-factor-card__desc">Encryption strength, protocol security, DNS leak protection, and audit compliance.</p>
+            <div class="cal-factor-card__weight">
+              <span class="cal-factor-card__weight-label">Weight in score</span>
+              <span class="cal-factor-card__weight-val">30%</span>
+              <div class="cal-factor-card__bar-track"><div class="cal-factor-card__bar" style="width:30%"></div></div>
+            </div>
+          </div>
+          <div class="cal-factor-card">
+            <div class="cal-factor-card__icon cal-factor-card__icon--warning" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M9 7h6M9 11h6M9 15h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cal-factor-card__title">Ease of Use</h3>
+            <p class="cal-factor-card__desc">App design, setup complexity, platform support, and customer support quality.</p>
+            <div class="cal-factor-card__weight">
+              <span class="cal-factor-card__weight-label">Weight in score</span>
+              <span class="cal-factor-card__weight-val">20%</span>
+              <div class="cal-factor-card__bar-track"><div class="cal-factor-card__bar" style="width:20%"></div></div>
+            </div>
+          </div>
+          <div class="cal-factor-card">
+            <div class="cal-factor-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" stroke="currentColor" stroke-width="1.5"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="cal-factor-card__title">Server Coverage</h3>
+            <p class="cal-factor-card__desc">Number of servers, geographic distribution, and specialty server availability.</p>
+            <div class="cal-factor-card__weight">
+              <span class="cal-factor-card__weight-label">Weight in score</span>
+              <span class="cal-factor-card__weight-val">15%</span>
+              <div class="cal-factor-card__bar-track"><div class="cal-factor-card__bar" style="width:15%"></div></div>
+            </div>
+          </div>
+          <div class="cal-factor-card">
+            <div class="cal-factor-card__icon cal-factor-card__icon--success" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6.5 7 1-5 5 1.5 7L12 18l-6.5 3.5 1.5-7L2 9.5l7-1L12 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="cal-factor-card__title">Value for Money</h3>
+            <p class="cal-factor-card__desc">Pricing tiers, simultaneous connections, free trial availability, and refund policy.</p>
+            <div class="cal-factor-card__weight">
+              <span class="cal-factor-card__weight-label">Weight in score</span>
+              <span class="cal-factor-card__weight-val">10%</span>
+              <div class="cal-factor-card__bar-track"><div class="cal-factor-card__bar" style="width:10%"></div></div>
+            </div>
+          </div>
+          <div class="cal-factor-card">
+            <div class="cal-factor-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cal-factor-card__title">Long-Term Reliability</h3>
+            <p class="cal-factor-card__desc">Uptime record, track record of security incidents, and transparency reports.</p>
+            <div class="cal-factor-card__weight">
+              <span class="cal-factor-card__weight-label">Weight in score</span>
+              <span class="cal-factor-card__weight-val">Qualitative</span>
+              <div class="cal-factor-card__bar-track"><div class="cal-factor-card__bar" style="width:8%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 8: FAQ ACCORDION
+         ----------------------------------------------------------------- -->
+    <section class="cal-faq-section" id="cal-section-faq" aria-labelledby="cal-faq-h2">
+      <div class="cal-container cal-container--faq">
+        <div class="cal-section-header cal-section-header--center">
+          <h2 class="cal-section-header__h2" id="cal-faq-h2" data-cal-content="faq-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="cal-faq-list" id="cal-faq-list">
+          <!-- FAQ 条目由 JS 渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 9: RELATED CATEGORIES
+         ----------------------------------------------------------------- -->
+    <section class="cal-related-categories" id="cal-section-related" aria-labelledby="cal-related-h2">
+      <div class="cal-container">
+        <div class="cal-section-header">
+          <h2 class="cal-section-header__h2" id="cal-related-h2" data-cal-content="related-title">Related Categories</h2>
+        </div>
+        <div class="cal-related-grid" id="cal-related-grid">
+          <!-- 由 JS 渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         SECTION 10: NEWSLETTER
+         （WordPress 整合时替换为 Elementor Newsletter 模块）
+         ----------------------------------------------------------------- -->
+    <section class="cal-newsletter" id="cal-section-newsletter" aria-labelledby="cal-newsletter-h2">
+      <div class="cal-container">
+        <div class="cal-newsletter__inner">
+          <div class="cal-newsletter__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#EFF6FF"/><path d="M6 10h20v14H6V10z" stroke="#2563EB" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 10l10 9 10-9" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="cal-newsletter__text">
+            <h2 class="cal-newsletter__h2" id="cal-newsletter-h2">Stay Ahead of Cyber Threats</h2>
+            <p class="cal-newsletter__sub">Get our monthly security roundup — new product reviews, threat alerts, and expert tips.</p>
+          </div>
+          <form class="cal-newsletter__form" action="#" method="post" novalidate aria-label="Newsletter 订阅表单">
+            <div class="cal-newsletter__fields">
+              <label class="cal-sr-only" for="cal-newsletter-email">Email address</label>
+              <input
+                class="cal-newsletter__input"
+                type="email"
+                id="cal-newsletter-email"
+                name="email"
+                placeholder="Enter your email address"
+                autocomplete="email"
+                required
+              >
+              <button type="submit" class="cal-btn cal-btn--primary cal-newsletter__btn">Subscribe Free</button>
+            </div>
+            <p class="cal-newsletter__privacy">No spam, ever. Unsubscribe in one click. <a href="#">Privacy Policy</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================================
+       FOOTER（静态模拟 - WordPress 整合时替换为 Astra/Elementor Footer）
+       =================================================================== -->
+  <footer class="cal-footer" role="contentinfo" aria-label="页脚">
+    <div class="cal-footer__main">
+      <div class="cal-container">
+        <div class="cal-footer__grid">
+          <!-- 品牌列 -->
+          <div class="cal-footer__brand">
+            <a href="#" class="cal-footer__logo" aria-label="CyberAtlasLab 首页">
+              <div class="cal-footer__logo-mark">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect width="28" height="28" rx="6" fill="#2563EB"/><path d="M7 14L11.5 18.5L21 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <span class="cal-footer__logo-text">CyberAtlasLab</span>
+            </a>
+            <p class="cal-footer__tagline">Independent cybersecurity product testing and reviews for professionals and consumers.</p>
+            <div class="cal-footer__trust-signals">
+              <span class="cal-footer__trust-item">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1l1.5 3.5H12l-2.75 2 1 3.5L7 8 3.75 10l1-3.5L2 4.5h3.5L7 1z" fill="#F59E0B"/></svg>
+                Editor-Verified
+              </span>
+              <span class="cal-footer__trust-item">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#059669" stroke-width="1.5"/><path d="M4.5 7L6.5 9 9.5 5" stroke="#059669" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Independently Tested
+              </span>
+            </div>
+          </div>
+          <!-- 导航列 1 -->
+          <div class="cal-footer__nav-col">
+            <h3 class="cal-footer__nav-title">Categories</h3>
+            <ul class="cal-footer__nav-list">
+              <li><a href="#">VPN Services</a></li>
+              <li><a href="#">Password Managers</a></li>
+              <li><a href="#">Antivirus Software</a></li>
+              <li><a href="#">Firewalls</a></li>
+              <li><a href="#">Identity Protection</a></li>
+            </ul>
+          </div>
+          <!-- 导航列 2 -->
+          <div class="cal-footer__nav-col">
+            <h3 class="cal-footer__nav-title">Company</h3>
+            <ul class="cal-footer__nav-list">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Methodology</a></li>
+              <li><a href="#">Editorial Policy</a></li>
+              <li><a href="#">Advertise</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <!-- 导航列 3 -->
+          <div class="cal-footer__nav-col">
+            <h3 class="cal-footer__nav-title">Resources</h3>
+            <ul class="cal-footer__nav-list">
+              <li><a href="#">Security Blog</a></li>
+              <li><a href="#">Threat Reports</a></li>
+              <li><a href="#">Comparison Tools</a></li>
+              <li><a href="#">Buying Guides</a></li>
+              <li><a href="#">Glossary</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cal-footer__bottom">
+      <div class="cal-container">
+        <div class="cal-footer__bottom-inner">
+          <p class="cal-footer__copy">© 2025 CyberAtlasLab. All rights reserved.</p>
+          <div class="cal-footer__legal">
+            <a href="#">Privacy Policy</a>
+            <span aria-hidden="true">·</span>
+            <a href="#">Terms of Use</a>
+            <span aria-hidden="true">·</span>
+            <a href="#">Affiliate Disclosure</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================
+       JavaScript（内嵌）
+       WordPress 整合时拆分到子主题 js/ 目录
+       =================================================================== -->
+  <script src="category-best-x.js"></script>
+
+</body>
+</html>
