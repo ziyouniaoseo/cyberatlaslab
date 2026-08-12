@@ -7611,7 +7611,12 @@ html {
    2.9 侧边栏
    ----------------------------------------------------------------------------- */
 
-/* Desktop — 容器固定宽度，Elementor Sticky 生效 */
+/* Desktop — 容器固定宽度，Elementor Sticky 生效
+   z-index 兜底：Anchor Nav 的 z-index 为 var(--cal-z-sticky)（200），
+   此处显式给到更低层级，避免两个独立吸顶元素在吸顶临界点出现视觉穿插时
+   谁盖住谁不可预期。真正避免重叠仍依赖 Elementor 侧栏 Sticky 的 Offset
+   数值大于 Anchor Nav 桌面态实际高度，这一步需要在 Elementor 编辑器中确认，
+   这条规则只是最后一道保险，不能替代 Offset 调整。 */
 .e-con.crs-sidebar,
 .elementor-element.crs-sidebar {
     width: var(--cal-sidebar-width) !important;
@@ -7619,6 +7624,7 @@ html {
     max-width: var(--cal-sidebar-width) !important;
     flex-shrink: 0 !important;
     align-self: flex-start !important;
+    z-index: var(--cal-z-dropdown) !important;
 }
 
 .crs-sidebar__unified {
@@ -10799,8 +10805,8 @@ p.cal-cat-hero__meta {
    ------------------------------------------------------------------------- */
 /* =============================================================================
    STICKY ANCHOR NAV - 分类页粘性锚点导航
-   结构：.cal-anchor-nav__desktop（贴合式 Tab Bar，≥1025px）
-        .cal-anchor-nav__mobile（动态标题折叠手风琴，≤1024px，交互对齐 crs-toc-mobile）
+   结构：.cal-anchor-nav__desktop（贴合式 Tab Bar，序号 01–06 + 浅蓝 Pill 高亮，≥1025px）
+        .cal-anchor-nav__mobile（折叠手风琴，标题固定 Contents，≤1024px，交互对齐 crs-toc-mobile）
    ============================================================================= */
 
 .cal-anchor-sentinel {
@@ -10852,28 +10858,57 @@ p.cal-cat-hero__meta {
         display: none !important;
     }
 
+    /* Tab 外层容器负责高度与间隙，Pill 高亮由内部 padding + 圆角背景承载，
+       不再使用底部描边下划线方案 */
+    .cal-anchor-nav__tab-item {
+        display: flex !important;
+        align-items: center !important;
+        padding: var(--cal-space-6) var(--cal-space-3) !important;
+    }
+
     .cal-anchor-nav__tab {
         display: flex !important;
         align-items: center !important;
-        height: 52px !important;
-        padding: 0 var(--cal-space-10) !important;
+        gap: var(--cal-space-4) !important;
+        height: 40px !important;
+        padding: 0 var(--cal-space-9) !important;
+        border-radius: var(--cal-radius-full) !important;
         color: var(--cal-text-muted) !important;
         font-size: var(--cal-text-base) !important;
         font-weight: var(--cal-font-semibold) !important;
         white-space: nowrap !important;
-        border-bottom: var(--cal-border-width-2) solid transparent !important;
-        transition: var(--cal-transition-colors), border-color var(--cal-transition-normal) !important;
+        transition: var(--cal-transition-colors) !important;
     }
 
     .cal-anchor-nav__tab:hover {
         color: var(--cal-text) !important;
+        background: var(--cal-gray-100) !important;
     }
 
+    /* Desktop Active：浅蓝 Pill + 蓝字，取代此前的底部下划线方案 */
     .cal-anchor-nav__tab.is-active,
     .cal-anchor-nav__tab[aria-current="true"] {
+        background: var(--cal-primary-bg) !important;
         color: var(--cal-primary-dark) !important;
-        border-bottom-color: var(--cal-primary) !important;
         font-weight: var(--cal-font-bold) !important;
+    }
+
+    .cal-anchor-nav__tab.is-active .cal-anchor-nav__tab-index,
+    .cal-anchor-nav__tab[aria-current="true"] .cal-anchor-nav__tab-index {
+        color: var(--cal-primary) !important;
+    }
+
+    /* 序号 01–06：弱化于主标签文字，仅作为可扫描的顺序标记 */
+    .cal-anchor-nav__tab-index {
+        color: var(--cal-gray-400) !important;
+        font-size: var(--cal-text-sm) !important;
+        font-weight: var(--cal-font-semibold) !important;
+        font-variant-numeric: tabular-nums !important;
+        letter-spacing: var(--cal-tracking-normal) !important;
+    }
+
+    .cal-anchor-nav__tab-label {
+        line-height: var(--cal-leading-none) !important;
     }
 
     /* 桌面态不渲染移动折叠条 */
@@ -10923,6 +10958,8 @@ p.cal-cat-hero__meta {
         height: var(--cal-icon-md) !important;
     }
 
+    /* 标题固定为 "Contents"（PHP 静态输出），与右侧 sections 计数配合，
+       不再随滚动改写文案 */
     .cal-anchor-nav__toggle-label {
         flex: 1 1 auto !important;
         min-width: 0 !important;
@@ -11025,12 +11062,16 @@ p.cal-cat-hero__meta {
 
 /* ---------------------------------------------------------------------------
    分段吸顶偏移：复用已存在的 --cal-anchor-scroll-margin 令牌
-   目标 id 由各分类模块 shortcode 自行输出（#comparison / #methodology / #picks / #guide / #faq）
+   目标 id 由各分类模块 shortcode 自行输出
+   （#comparison / #methodology / #picks / #guide / #factors / #faq）
+   2026-08 更新：补充 #factors（[cal_factors] What We Compare），
+   此前缺失该选择器是滚动到该模块时导航“断层”的直接原因之一
    --------------------------------------------------------------------------- */
 #comparison,
 #methodology,
 #picks,
 #guide,
+#factors,
 #faq {
     scroll-margin-top: var(--cal-anchor-scroll-margin) !important;
 }

@@ -5,9 +5,10 @@
  *
  * 职责（单文件，对齐仓库 toc-highlight.js 的"一份文件覆盖桌面+移动"惯例）：
  * 1. 滚动高亮：IntersectionObserver 判定当前所在分段，同步点亮桌面 Tab
- *    下划线与移动折叠条内的编号列表项，并更新移动折叠条的动态标题。
- * 2. 折叠交互：移动端折叠条展开/收起，交互与 [crs_toc_mobile] 对齐
- *    （点击触发、点击外部关闭、Esc 关闭、选中后自动收起）。
+ *    的浅蓝 Pill 高亮与移动折叠条内的编号列表项。移动折叠条触发按钮标题
+ *    固定显示 "Contents"（由 PHP 输出的静态文案），本脚本不再改写它。
+ * 2. 折叠交互：移动端折叠条展开/收起，交互与 [crs_toc_mobile] 完全对齐
+ *    （点击触发、滚动即收起、点击外部关闭、Esc 关闭、选中后自动收起）。
  * 3. 吸顶态：监听哨兵元素，滚动经过原始位置后追加 is-stuck，只加阴影，
  *    不改变布局。
  *
@@ -37,7 +38,6 @@
         var mobileWrap = nav.querySelector('.cal-anchor-nav__mobile');
         var toggle = nav.querySelector('.cal-anchor-nav__toggle');
         var list = nav.querySelector('.cal-anchor-nav__list');
-        var currentLabelEl = nav.querySelector('[data-cal-anchor-current-label]');
 
         /* =====================================================
            A. 动态头部偏移（与 toc-highlight.js 同一测量逻辑，
@@ -101,12 +101,8 @@
                 link.setAttribute('aria-current', 'true');
             });
 
-            if (currentLabelEl) {
-                var labelEl = links[0].querySelector('.cal-anchor-nav__item-label');
-                currentLabelEl.textContent = labelEl
-                    ? labelEl.textContent.trim()
-                    : links[0].textContent.trim();
-            }
+            // 注意：移动折叠条触发按钮标题固定显示 "Contents"（PHP 静态输出），
+            // 与测评页 [crs_toc_mobile] 行为一致，此处不再随滚动改写标题文案。
         }
 
         var ratios = {};
@@ -215,6 +211,15 @@
                     closeMobilePanel();
                 }
             });
+
+            // 滚动即收起：与 toc-highlight.js 的移动端 TOC 行为完全对齐——
+            // 只要面板处于展开态，用户一旦滚动页面就立即收起，
+            // 避免展开的面板随滚动悬停在内容上方造成遮挡。
+            window.addEventListener('scroll', function () {
+                if (mobileWrap.classList.contains('is-open')) {
+                    closeMobilePanel();
+                }
+            }, { passive: true });
         }
 
         /* =====================================================

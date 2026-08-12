@@ -5595,12 +5595,12 @@ if (!shortcode_exists('cal_cat_hero')) {
  * 39. 分类页粘性锚点导航 - [cal_anchor_nav]
  * =============================================================================
  * 结构：
- *   - 桌面态（≥1025px）：贴合式 Tab Bar，下划线跟随滚动位置高亮，始终整行展开
- *   - 移动态（≤1024px）：动态标题折叠手风琴，交互与 [crs_toc_mobile]（测评页 Contents）完全对齐
+ *   - 桌面态（≥1025px）：贴合式 Tab Bar，序号 01–06 + 浅蓝 Pill 高亮跟随滚动位置切换，始终整行展开
+ *   - 移动态（≤1024px）：折叠手风琴，标题固定为 Contents，交互与 [crs_toc_mobile]（测评页 Contents）完全对齐
  * 无 JS 兼容：折叠面板与全部链接在 HTML 层始终存在（渐进增强），JS 仅负责状态展示，
  *   禁用 JS 时链接依然可点击、可被抓取
  * 顺序：锚点顺序与页面真实阅读顺序一致 —— Comparison → How We Test → Top Picks →
- *   Buying Guide → FAQ，保证导航语义与内容顺序对齐（SEO / AEO 目录一致性）
+ *   Buying Guide → What We Compare → FAQ（共 6 项），保证导航语义与内容顺序对齐（SEO / AEO 目录一致性）
  * 用法：[cal_anchor_nav]
  * =============================================================================
  */
@@ -5608,12 +5608,14 @@ if (!function_exists('cal_anchor_nav_shortcode')) {
 
     function cal_anchor_nav_shortcode($atts)
     {
-        // 顺序即页面真实阅读顺序：先看差异 → 再懂测试方法 → 再看编辑推荐 → 再读指南 → 最后看 FAQ
+        // 顺序即页面真实阅读顺序：先看差异 → 再懂测试方法 → 再看编辑推荐 → 再读指南 → 再看比较维度 → 最后看 FAQ
+        // 2026-08 更新：并入 What We Compare（#factors），修复此前导航缺口导致的滚动断层
         $items = array(
             'comparison'  => __('Comparison', 'cyberatlaslab'),
             'methodology' => __('How We Test', 'cyberatlaslab'),
             'picks'       => __('Top Picks', 'cyberatlaslab'),
             'guide'       => __('Buying Guide', 'cyberatlaslab'),
+            'factors'     => __('What We Compare', 'cyberatlaslab'),
             'faq'         => __('FAQ', 'cyberatlaslab'),
         );
 
@@ -5624,19 +5626,17 @@ if (!function_exists('cal_anchor_nav_shortcode')) {
         $label_id    = 'cal-anchor-label-' . $unique_seed;
         $has_icon    = function_exists('cal_get_icon');
 
-        // 折叠条默认标题：JS 未接管前的渐进增强兜底文案
-        $first_label = reset($items);
-
         ob_start();
         // 哨兵：sticky 吸顶态检测锚点，无视觉、不参与布局
         echo '<span class="cal-anchor-sentinel" aria-hidden="true"></span>';
         ?>
         <nav class="cal-anchor-nav" data-cal-anchor-nav aria-label="<?php esc_attr_e('Category sections', 'cyberatlaslab'); ?>">
 
-            <!-- 桌面态：贴合式下划线高亮 Tab Bar -->
+            <!-- 桌面态：贴合式 Tab Bar，序号 01–06 + 浅蓝 Pill 高亮 -->
             <div class="cal-anchor-nav__desktop" data-context="desktop">
                 <ul class="cal-anchor-nav__tabs">
-                    <?php foreach ($items as $anchor => $label) : ?>
+                    <?php $d_index = 0;
+        foreach ($items as $anchor => $label) : $d_index++; ?>
                         <li class="cal-anchor-nav__tab-item">
                             <a
                                 class="cal-anchor-nav__tab"
@@ -5646,14 +5646,15 @@ if (!function_exists('cal_anchor_nav_shortcode')) {
                                 data-context="desktop"
                                 aria-current="false"
                             >
-                                <?php echo esc_html($label); ?>
+                                <span class="cal-anchor-nav__tab-index" aria-hidden="true"><?php echo esc_html(sprintf('%02d', $d_index)); ?></span>
+                                <span class="cal-anchor-nav__tab-label"><?php echo esc_html($label); ?></span>
                             </a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
             </div>
 
-            <!-- 移动态：动态标题折叠手风琴（交互对齐 [crs_toc_mobile]） -->
+            <!-- 移动态：折叠手风琴，标题固定为 Contents（交互对齐 [crs_toc_mobile]） -->
             <div class="cal-anchor-nav__mobile" data-context="mobile">
                 <button
                     class="cal-anchor-nav__toggle"
@@ -5669,9 +5670,8 @@ if (!function_exists('cal_anchor_nav_shortcode')) {
                     <span
                         class="cal-anchor-nav__toggle-label"
                         id="<?php echo esc_attr($label_id); ?>"
-                        data-cal-anchor-current-label
                     >
-                        <?php echo esc_html($first_label); ?>
+                        <?php esc_html_e('Contents', 'cyberatlaslab'); ?>
                     </span>
 
                     <span class="cal-anchor-nav__toggle-count">
