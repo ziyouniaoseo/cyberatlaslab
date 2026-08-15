@@ -5151,19 +5151,34 @@ if (!function_exists('cal_compare_table_shortcode')) {
             return '';
         }
 
+        // 标题/副标题：简码属性优先，其次读取分类页字段 cat_compare_title /
+        // cat_compare_subtitle（后台编辑分类页时自定义添加），最后才用默认文案兜底，
+        // 与测评页统一的“ACF 字段驱动模块标题”规范保持一致
         $title = trim((string) $atts['title']);
+        if ($title === '') {
+            $acf_title = get_field('cat_compare_title', $post_id);
+            $title = is_string($acf_title) ? trim($acf_title) : '';
+        }
         if ($title === '') {
             $title = __('Quick Comparison', 'cyberatlaslab');
         }
 
         $intro = trim((string) $atts['intro']);
         if ($intro === '') {
+            $acf_intro = get_field('cat_compare_subtitle', $post_id);
+            $intro = is_string($acf_intro) ? trim($acf_intro) : '';
+        }
+        if ($intro === '') {
             $intro = __('A fast side-by-side snapshot of the top-ranked products in this category — see how they compare on score, price, and who they\'re best suited for.', 'cyberatlaslab');
         }
 
-        // Score Engine：Overall 维度 tooltip，桌面表头与移动端逐行共用同一份，
-        // 只调用一次，避免重复渲染逻辑（但会在 DOM 中输出多个实例，见下方说明）
-        $score_tip = function_exists('crs_render_score_tooltip') ? crs_render_score_tooltip('overall') : '';
+        // Score Engine：Overall 维度 tooltip。
+        // 修复点：桌面表头单独持有一份实例；移动端改为在下方 foreach 内逐行
+        // 重新调用，让 crs_render_score_tooltip() 内部的 static 计数器为每一行
+        // 生成互不相同的 uid，避免同一个 id 在页面中出现 6 次
+        // （此前复用同一个 $score_tip 字符串会导致 document.getElementById()
+        // 永远只命中第一个实例，移动端 5 张卡片的 ⓘ 点击展开全部失效）
+        $desktop_score_tip = function_exists('crs_render_score_tooltip') ? crs_render_score_tooltip('overall') : '';
 
         // ---------------------------------------------------------------
         // 单次数据取值：只遍历一遍 $products，组装成 $rows 数组，
@@ -5251,7 +5266,7 @@ if (!function_exists('cal_compare_table_shortcode')) {
                                 <th scope="col" class="cal-compare__th-score">
                                     <span class="cal-compare__th-score-inner">
                                         <?php esc_html_e('Score', 'cyberatlaslab'); ?>
-                                        <?php echo $score_tip; ?>
+                                        <?php echo $desktop_score_tip; ?>
                                     </span>
                                 </th>
                                 <th scope="col" class="cal-compare__th-price"><?php esc_html_e('Price', 'cyberatlaslab'); ?></th>
@@ -5305,13 +5320,16 @@ if (!function_exists('cal_compare_table_shortcode')) {
                                                     'url'   => $row['cta_url'],
                                                     'text'  => sprintf(__('Visit %s', 'cyberatlaslab'), $row['name']),
                                                     'class' => 'cal-compare__cta',
-                                                    'icon'  => true,
+                                                    // 显式指定图标 key，不依赖 class 名自动判断，
+                                                    // 确保渲染的是无圆圈的普通右箭头，与移动端保持一致
+                                                    'icon'  => 'right_arrow_icon',
                                                 ));
                                                 ?>
                                             <?php endif; ?>
                                             <?php if ($row['has_review']) : ?>
                                                 <a class="cal-compare__review-link" href="<?php echo esc_url($row['review_url']); ?>">
                                                     <?php esc_html_e('Read Review', 'cyberatlaslab'); ?>
+                                                    <?php echo function_exists('cal_get_icon') ? cal_get_icon('right_collapse_arrow_icon', 'cal-compare__review-link-icon') : ''; ?>
                                                 </a>
                                             <?php endif; ?>
                                         </span>
@@ -5349,7 +5367,12 @@ if (!function_exists('cal_compare_table_shortcode')) {
                                         <span class="screen-reader-text"><?php esc_html_e('Score:', 'cyberatlaslab'); ?></span>
                                         <span class="cal-snapshot-card__score-value"><?php echo esc_html($row['score']); ?></span>
                                         <span class="cal-snapshot-card__score-max">/10</span>
-                                        <?php echo $score_tip; ?>
+                                        <?php
+                                        // 修复点：每一行单独调用，而不是复用桌面那一份 $desktop_score_tip，
+                                        // 让 static $instance 计数器为每张卡片生成不同的 uid，
+                                        // 5 张卡片各自的 ⓘ 点击展开互不干扰
+                                        echo function_exists('crs_render_score_tooltip') ? crs_render_score_tooltip('overall') : '';
+                                        ?>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -5382,13 +5405,14 @@ if (!function_exists('cal_compare_table_shortcode')) {
                                         'url'   => $row['cta_url'],
                                         'text'  => sprintf(__('Visit %s', 'cyberatlaslab'), $row['name']),
                                         'class' => 'cal-snapshot-card__cta',
-                                        'icon'  => true,
+                                        'icon'  => 'right_arrow_icon',
                                     ));
                                     ?>
                                 <?php endif; ?>
                                 <?php if ($row['has_review']) : ?>
                                     <a class="cal-snapshot-card__review-link" href="<?php echo esc_url($row['review_url']); ?>">
                                         <?php esc_html_e('Read Review', 'cyberatlaslab'); ?>
+                                        <?php echo function_exists('cal_get_icon') ? cal_get_icon('right_collapse_arrow_icon', 'cal-snapshot-card__review-link-icon') : ''; ?>
                                     </a>
                                 <?php endif; ?>
                             </div>
@@ -5983,6 +6007,40 @@ if (!function_exists('crs_get_product_logo_html')) {
             if ($path && file_exists($path)) {
                 $svg = file_get_contents($path);
                 $svg = preg_replace('/<\?xml[^>]*\?>/', '', $svg);
+
+                // 修复点：同一份 SVG 会在同一页面被内联多次（桌面 Table 一次 +
+                // 移动 Snapshot 一次；分类页 Quick Comparison / Editor's Picks
+                // 等模块也可能对同一产品各调用一次本函数）。如果源 SVG 文件内部
+                // 带有 <defs>/<clipPath>/<linearGradient> 等元素并使用了 id
+                // （很多设计工具导出的 SVG 默认就会生成 id="a" / id="clip0" 这类
+                // 短命名，不同文件之间极易撞名），浏览器在同一文档中遇到重复 id
+                // 时只认第一个，后续内联的同名 id 会解析失败或引用错乱——
+                // 这正是"桌面正常、移动端某个产品 Logo 显示不出来，且具体哪个
+                // 产品失效会变化"的根因：谁在文档顺序中排在后面，谁就先失效。
+                // 处理方式：给该 SVG 内部所有带 id 的元素统一加一个基于附件 ID
+                // 的前缀，并同步替换 url(#xxx) / xlink:href="#xxx" 等引用，
+                // 确保同一 Logo 无论被内联多少次，各次输出的 id 都互不冲突。
+                if (strpos($svg, ' id=') !== false || strpos($svg, 'href="#') !== false) {
+                    static $inline_seq = 0;
+                    $inline_seq++;
+                    $prefix = 'calsvg' . $att_id . '-' . $inline_seq . '-';
+
+                    $svg = preg_replace_callback(
+                        '/\bid="([^"]+)"/',
+                        function ($m) use ($prefix) {
+                            return 'id="' . $prefix . $m[1] . '"';
+                        },
+                        $svg
+                    );
+                    $svg = preg_replace_callback(
+                        '/(href="|url\()#([^")]+)/',
+                        function ($m) use ($prefix) {
+                            return $m[1] . '#' . $prefix . $m[2];
+                        },
+                        $svg
+                    );
+                }
+
                 return '<span class="cal-logo-svg" aria-hidden="true">' . $svg . '</span>';
             }
         }

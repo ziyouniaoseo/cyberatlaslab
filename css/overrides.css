@@ -10558,6 +10558,22 @@ p.cal-cat-hero__meta {
     overflow: hidden !important;
 }
 
+/* 修复点：768px~1024px（平板宽度区间）Desktop Table 仍然显示（切换到
+   Mobile Snapshot 的断点是 767px），但六列内容宽度会超出容器可用宽度。
+   原规则只有 overflow: hidden，没有给表格提供横向滚动的逃生通道，
+   导致 CTA 列被直接挤出容器/页面。这里补一个横向滚动区间，
+   不改变 767px 以下切换到 Mobile Snapshot 的既定断点和整体视觉方向。 */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .cal-compare__scroll {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    .cal-compare__table {
+        min-width: 780px !important;
+    }
+}
+
 .cal-compare__table {
     width: 100% !important;
     border-collapse: collapse !important;
@@ -10770,6 +10786,9 @@ p.cal-cat-hero__meta {
 }
 
 .cal-compare__review-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3px !important;
     font-size: 12.5px !important;
     font-weight: 600 !important;
     color: var(--cal-text-secondary, #64748b) !important;
@@ -10780,6 +10799,12 @@ p.cal-cat-hero__meta {
 .cal-compare__review-link:hover {
     color: var(--cal-primary, #2563eb) !important;
     text-decoration: underline !important;
+}
+
+.cal-compare__review-link-icon {
+    width: 12px !important;
+    height: 12px !important;
+    flex: 0 0 auto !important;
 }
 
 /* =====================================================================
@@ -10996,6 +11021,9 @@ p.cal-cat-hero__meta {
 }
 
 .cal-snapshot-card__review-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3px !important;
     font-size: 12.5px !important;
     font-weight: 600 !important;
     color: var(--cal-text-secondary, #64748b) !important;
@@ -11005,6 +11033,12 @@ p.cal-cat-hero__meta {
 .cal-snapshot-card__review-link:hover {
     color: var(--cal-primary, #2563eb) !important;
     text-decoration: underline !important;
+}
+
+.cal-snapshot-card__review-link-icon {
+    width: 12px !important;
+    height: 12px !important;
+    flex: 0 0 auto !important;
 }
 
 /* =====================================================================
